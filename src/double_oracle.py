@@ -33,11 +33,23 @@ MAX_ITERATION = config.getint('double-oracle', 'max_iteration')
 N_TRIAL = config.getint('double-oracle', 'n_trial')
 ##########################################################
 
-def find_mixed_NE(payoff_def, payoff_atk):
+def find_mixed_NE(payoff_def, payoff_atk, selection='defender_max', report_range=False):
     """
     Compute a mixed-strategy Nash equilibrium for the general-sum restricted game.
     :param payoff_def: 2D array. Row = defender, column = attacker. Defender's payoffs.
     :param payoff_atk: 2D array, same shape. Attacker's payoffs.
+    :param selection: Which equilibrium to return when multiple exist.
+        'defender_max' (default, original behaviour): pick the equilibrium that
+            maximizes the defender's utility. NOTE: this is a biased tie-break,
+            not a neutral one -- it systematically favors the defender whenever
+            several equilibria exist. Kept as default only for backward
+            compatibility with prior runs.
+        'welfare_max': pick the equilibrium maximizing the sum of both players'
+            utilities (a more neutral, Pareto-motivated tie-break).
+    :param report_range: If True, also logs (via `logging.info`) the min/max/mean
+        defender utility across ALL computed equilibria, so the spread introduced
+        by equilibrium selection is visible in the log regardless of which
+        equilibrium is ultimately returned.
     :return: attack_strategy (list), defense_strategy (list), defense_utility (float)
     """
     game = nash.Game(payoff_def, payoff_atk)
@@ -47,6 +59,13 @@ def find_mixed_NE(payoff_def, payoff_atk):
         sigma_def, sigma_atk = eq
         return np.dot(np.dot(sigma_def, payoff_def), sigma_atk)
 
+    def atk_utility_of(eq):
+        sigma_def, sigma_atk = eq
+        return np.dot(np.dot(sigma_def, payoff_atk), sigma_atk)
+
+    def welfare_of(eq):
+        return def_utility_of(eq) + atk_utility_of(eq)
+
     if len(equilibria) == 0:
         n_def = payoff_def.shape[0]
         n_atk = payoff_def.shape[1]
@@ -55,7 +74,21 @@ def find_mixed_NE(payoff_def, payoff_atk):
         defense_utility = np.dot(np.dot(defense_strategy, payoff_def), attack_strategy)
         return attack_strategy, defense_strategy, defense_utility
 
-    best_eq = max(equilibria, key=def_utility_of)
+    if report_range:
+        def_utils = [def_utility_of(eq) for eq in equilibria]
+        logging.info(
+            "find_mixed_NE: {} equilibria found. Defender utility range: "
+            "min={:.4f}, max={:.4f}, mean={:.4f}".format(
+                len(equilibria), min(def_utils), max(def_utils),
+                sum(def_utils) / len(def_utils)))
+
+    if selection == 'welfare_max':
+        best_eq = max(equilibria, key=welfare_of)
+    elif selection == 'defender_max':
+        best_eq = max(equilibria, key=def_utility_of)
+    else:
+        raise ValueError("Unknown selection rule: {}".format(selection))
+
     sigma_def, sigma_atk = best_eq
 
     defense_strategy = list(sigma_def)
@@ -162,7 +195,8 @@ def double_oracle(model, exper_index):
     initial_attack_size = payoff_def.shape[1]
 
     for i in range(MAX_ITERATION):
-        attack_strategy, defense_strategy, utility = find_mixed_NE(payoff_def, payoff_atk)
+        attack_strategy, defense_strategy, utility = find_mixed_NE(
+            payoff_def, payoff_atk, selection='defender_max', report_range=True)
         payoff_record.append(utility)
 
         # Current equilibrium utility for BOTH players, computed on matrices as they
