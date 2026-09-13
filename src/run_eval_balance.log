@@ -1,0 +1,192 @@
+/home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+2026-07-26 10:16:16,215 / INFO: Experiment starts.
+3
+1
+0
+0
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.2026-07-26 10:16:17,571 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+
+2026-07-26 10:16:17,571 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-26 10:16:17,579 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-26 10:16:17,579 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-26 10:16:17,769 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-26 10:16:17,773 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-26 10:16:17,928 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-26 10:16:17,929 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-0-0/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-1-0/ddpg.ckpt
+2026-07-26 10:16:17,933 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-0-0/ddpg.ckpt
+2026-07-26 10:16:17,933 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-1-0/ddpg.ckpt
+1
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-0-1/ddpg.ckpt
+2026-07-26 10:16:18,379 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-0-1/ddpg.ckpt
+2
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-0-2/ddpg.ckpt
+2026-07-26 10:16:18,768 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-0-2/ddpg.ckpt
+2026-07-26 10:16:33,063 / INFO: Episode 30, Ave step reward 2.187000000000009
+2026-07-26 10:16:33,099 / INFO: Episode 30, Ave step reward 2.0700000000000083
+2026-07-26 10:16:47,403 / INFO: Episode 40, Ave step reward 2.223000000000009
+2026-07-26 10:16:47,587 / INFO: Episode 40, Ave step reward 1.9440000000000075
+2026-07-26 10:17:01,296 / INFO: Episode 50, Ave step reward 2.2770000000000095
+2026-07-26 10:17:01,981 / INFO: Episode 50, Ave step reward 1.6650000000000056
+2026-07-26 10:17:15,244 / INFO: Episode 60, Ave step reward 2.4030000000000102
+2026-07-26 10:17:16,517 / INFO: Episode 60, Ave step reward 1.6020000000000052
+2026-07-26 10:17:29,561 / INFO: Episode 70, Ave step reward 2.4120000000000106
+2026-07-26 10:17:31,924 / INFO: Episode 70, Ave step reward 1.4040000000000041
+2026-07-26 10:17:44,431 / INFO: Episode 80, Ave step reward 2.4840000000000106
+2026-07-26 10:17:47,368 / INFO: Episode 80, Ave step reward 1.2690000000000032
+2026-07-26 10:17:59,478 / INFO: Episode 90, Ave step reward 2.4120000000000106
+2026-07-26 10:18:02,590 / INFO: Episode 90, Ave step reward 1.2240000000000029
+2026-07-26 10:18:14,102 / INFO: Episode 100, Ave step reward 2.2770000000000095
+2026-07-26 10:18:18,491 / INFO: Episode 100, Ave step reward 1.080000000000002
+2026-07-26 10:18:31,572 / INFO: Episode 110, Ave step reward 2.493000000000011
+2026-07-26 10:18:35,045 / INFO: Episode 110, Ave step reward 0.9450000000000012
+2026-07-26 10:18:46,826 / INFO: Episode 120, Ave step reward 2.520000000000011
+2026-07-26 10:18:49,833 / INFO: Episode 120, Ave step reward 0.8460000000000005
+2026-07-26 10:19:01,749 / INFO: Episode 130, Ave step reward 2.556000000000011
+2026-07-26 10:19:04,802 / INFO: Episode 130, Ave step reward 0.8100000000000003
+2026-07-26 10:19:16,961 / INFO: Episode 140, Ave step reward 2.502000000000011
+2026-07-26 10:19:19,895 / INFO: Episode 140, Ave step reward 0.7199999999999998
+2026-07-26 10:19:31,570 / INFO: Episode 150, Ave step reward 2.556000000000011
+2026-07-26 10:19:34,469 / INFO: Episode 150, Ave step reward 0.5849999999999994
+2026-07-26 10:19:45,627 / INFO: Episode 160, Ave step reward 2.61000000000001
+2026-07-26 10:19:49,200 / INFO: Episode 160, Ave step reward 0.5399999999999995
+2026-07-26 10:20:00,404 / INFO: Episode 170, Ave step reward 2.466000000000011
+2026-07-26 10:20:04,109 / INFO: Episode 170, Ave step reward 0.5039999999999994
+2026-07-26 10:20:14,751 / INFO: Episode 180, Ave step reward 2.4120000000000106
+2026-07-26 10:20:18,945 / INFO: Episode 180, Ave step reward 0.4679999999999995
+2026-07-26 10:20:29,513 / INFO: Episode 190, Ave step reward 2.700000000000008
+2026-07-26 10:20:33,942 / INFO: Episode 190, Ave step reward 0.40499999999999964
+2026-07-26 10:20:44,956 / INFO: Episode 200, Ave step reward 2.5110000000000112
+2026-07-26 10:20:49,680 / INFO: Episode 200, Ave step reward 0.4679999999999995
+2026-07-26 10:21:00,011 / INFO: Episode 210, Ave step reward 2.664000000000009
+2026-07-26 10:21:04,761 / INFO: Episode 210, Ave step reward 0.3149999999999998
+2026-07-26 10:21:14,743 / INFO: Episode 220, Ave step reward 2.556000000000011
+2026-07-26 10:21:19,632 / INFO: Episode 220, Ave step reward 0.33299999999999974
+2026-07-26 10:21:29,483 / INFO: Episode 230, Ave step reward 2.61000000000001
+2026-07-26 10:21:34,441 / INFO: Episode 230, Ave step reward 0.2339999999999999
+2026-07-26 10:21:43,957 / INFO: Episode 240, Ave step reward 2.5650000000000115
+2026-07-26 10:21:49,347 / INFO: Episode 240, Ave step reward 0.2969999999999998
+2026-07-26 10:21:58,435 / INFO: Episode 250, Ave step reward 2.62800000000001
+2026-07-26 10:22:04,317 / INFO: Episode 250, Ave step reward 0.27899999999999986
+2026-07-26 10:22:13,681 / INFO: Episode 260, Ave step reward 2.529000000000011
+2026-07-26 10:22:19,501 / INFO: Episode 260, Ave step reward 0.3059999999999998
+2026-07-26 10:22:28,753 / INFO: Episode 270, Ave step reward 2.6460000000000092
+2026-07-26 10:22:34,807 / INFO: Episode 270, Ave step reward 0.19799999999999998
+2026-07-26 10:22:44,249 / INFO: Episode 280, Ave step reward 2.583000000000011
+2026-07-26 10:22:50,307 / INFO: Episode 280, Ave step reward 0.171
+2026-07-26 10:22:59,439 / INFO: Episode 290, Ave step reward 2.5920000000000107
+2026-07-26 10:23:05,400 / INFO: Episode 290, Ave step reward 0.11700000000000003
+2026-07-26 10:23:14,653 / INFO: Episode 300, Ave step reward 2.556000000000011
+2026-07-26 10:23:21,011 / INFO: Episode 300, Ave step reward 0.09900000000000002
+2026-07-26 10:23:29,381 / INFO: Episode 310, Ave step reward 2.736000000000007
+2026-07-26 10:23:35,916 / INFO: Episode 310, Ave step reward 0.063
+2026-07-26 10:23:44,338 / INFO: Episode 320, Ave step reward 2.61900000000001
+2026-07-26 10:23:51,332 / INFO: Episode 320, Ave step reward 0.14400000000000004
+2026-07-26 10:23:59,480 / INFO: Episode 330, Ave step reward 2.5110000000000112
+2026-07-26 10:24:06,629 / INFO: Episode 330, Ave step reward 0.09000000000000002
+2026-07-26 10:24:14,785 / INFO: Episode 340, Ave step reward 2.664000000000009
+2026-07-26 10:24:21,859 / INFO: Episode 340, Ave step reward 0.09900000000000002
+2026-07-26 10:24:29,527 / INFO: Episode 350, Ave step reward 2.37600000000001
+2026-07-26 10:24:36,849 / INFO: Episode 350, Ave step reward 0.054000000000000006
+2026-07-26 10:24:44,596 / INFO: Episode 360, Ave step reward 2.493000000000011
+2026-07-26 10:24:52,149 / INFO: Episode 360, Ave step reward 0.09000000000000002
+2026-07-26 10:24:59,940 / INFO: Episode 370, Ave step reward 2.5920000000000107
+2026-07-26 10:25:07,420 / INFO: Episode 370, Ave step reward 0.07200000000000001
+2026-07-26 10:25:15,490 / INFO: Episode 380, Ave step reward 2.61900000000001
+2026-07-26 10:25:22,686 / INFO: Episode 380, Ave step reward 0.045
+2026-07-26 10:25:30,739 / INFO: Episode 390, Ave step reward 2.655000000000009
+2026-07-26 10:25:37,842 / INFO: Episode 390, Ave step reward 0.036000000000000004
+2026-07-26 10:25:45,557 / INFO: Episode 400, Ave step reward 2.5920000000000107
+2026-07-26 10:25:53,179 / INFO: Episode 400, Ave step reward 0.063
+2026-07-26 10:26:00,575 / INFO: Episode 410, Ave step reward 2.7270000000000074
+2026-07-26 10:26:08,274 / INFO: Episode 410, Ave step reward 0.063
+2026-07-26 10:26:15,121 / INFO: Episode 420, Ave step reward 2.6370000000000093
+2026-07-26 10:26:23,691 / INFO: Episode 420, Ave step reward 0.063
+2026-07-26 10:26:30,442 / INFO: Episode 430, Ave step reward 2.5920000000000107
+2026-07-26 10:26:39,580 / INFO: Episode 430, Ave step reward 0.045
+2026-07-26 10:26:47,187 / INFO: Episode 440, Ave step reward 2.466000000000011
+2026-07-26 10:26:57,071 / INFO: Episode 440, Ave step reward 0.045
+2026-07-26 10:27:04,667 / INFO: Episode 450, Ave step reward 2.520000000000011
+2026-07-26 10:27:12,927 / INFO: Episode 450, Ave step reward 0.027000000000000003
+2026-07-26 10:27:20,155 / INFO: Episode 460, Ave step reward 2.7180000000000075
+2026-07-26 10:27:28,589 / INFO: Episode 460, Ave step reward 0.036000000000000004
+2026-07-26 10:27:35,980 / INFO: Episode 470, Ave step reward 2.5380000000000114
+2026-07-26 10:27:44,369 / INFO: Episode 470, Ave step reward 0.0
+2026-07-26 10:27:52,054 / INFO: Episode 480, Ave step reward 2.7090000000000076
+2026-07-26 10:27:59,899 / INFO: Episode 480, Ave step reward 0.054000000000000006
+2026-07-26 10:28:07,079 / INFO: Episode 490, Ave step reward 2.502000000000011
+2026-07-26 10:28:15,104 / INFO: Episode 490, Ave step reward 0.027000000000000003
+2026-07-26 10:28:22,652 / INFO: Episode 500, Ave step reward 2.4210000000000105
+2026-07-26 10:28:29,957 / INFO: Episode 500, Ave step reward 0.009000000000000001
+2026-07-26 10:31:59,551 / INFO: RL utililty: 50.47252583638775
+2026-07-26 10:31:59,552 / INFO: exper_index 0 final utility -50.47252583638775
+2026-07-26 10:32:07,529 / INFO: RL utililty: 2.6812803198241983
+2026-07-26 10:32:07,529 / INFO: exper_index 1 final utility -2.6812803198241983
+2026-07-26 10:32:07,543 / INFO: The utility of the agent:
+[-50.47252583638775, -2.6812803198241983]
+-26.576903078105975

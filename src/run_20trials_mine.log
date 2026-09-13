@@ -1,0 +1,1530 @@
+/home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:528: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:529: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:530: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:535: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+2026-07-23 06:30:54,794 / INFO: Experiment starts.
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2026-07-23 06:30:58,105 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2026-07-23 06:30:58,105 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2026-07-23 06:30:58,105 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2026-07-23 06:30:58,105 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2026-07-23 06:30:58,105 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2026-07-23 06:30:58,106 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2026-07-23 06:30:58,107 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2026-07-23 06:30:58,107 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2026-07-23 06:30:58,106 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2026-07-23 06:30:58,105 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2026-07-23 06:30:58,112 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2026-07-23 06:30:58,107 / WARNING: From evaluate_ddpg.py:130: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-23 06:30:58,161 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-23 06:30:58,161 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-23 06:30:58,163 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-23 06:30:58,163 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-23 06:30:58,165 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-23 06:30:58,167 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-23 06:30:58,164 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-23 06:30:58,167 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-23 06:30:58,168 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-23 06:30:58,168 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-23 06:30:58,168 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2026-07-23 06:30:58,168 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-23 06:30:59,242 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-23 06:30:59,244 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-23 06:30:59,282 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-23 06:30:59,298 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-23 06:30:59,312 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-23 06:30:59,355 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-23 06:30:59,486 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-23 06:30:59,516 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-23 06:30:59,532 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-23 06:30:59,548 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-23 06:30:59,576 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2026-07-23 06:30:59,615 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/ops/losses/losses_impl.py:667: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-23 06:30:59,903 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-2-0/ddpg.ckpt
+2026-07-23 06:30:59,911 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-2-0/ddpg.ckpt
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-23 06:30:59,938 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-3-0/ddpg.ckpt
+2026-07-23 06:30:59,942 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-3-0/ddpg.ckpt
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-23 06:30:59,952 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-23 06:30:59,954 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-0-0/ddpg.ckpt
+2026-07-23 06:30:59,960 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-0-0/ddpg.ckpt
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-6-0/ddpg.ckpt
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-23 06:30:59,962 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-6-0/ddpg.ckpt
+2026-07-23 06:30:59,964 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-23 06:30:59,962 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-1-0/ddpg.ckpt
+2026-07-23 06:30:59,968 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-1-0/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-4-0/ddpg.ckpt
+2026-07-23 06:30:59,969 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-4-0/ddpg.ckpt
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-23 06:31:00,020 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-11-0/ddpg.ckpt
+2026-07-23 06:31:00,026 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-11-0/ddpg.ckpt
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-23 06:31:00,076 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-9-0/ddpg.ckpt
+2026-07-23 06:31:00,082 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-9-0/ddpg.ckpt
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-23 06:31:00,085 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-5-0/ddpg.ckpt
+2026-07-23 06:31:00,095 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-5-0/ddpg.ckpt
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-23 06:31:00,097 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-10-0/ddpg.ckpt
+2026-07-23 06:31:00,105 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-10-0/ddpg.ckpt
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-23 06:31:00,158 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-7-0/ddpg.ckpt
+2026-07-23 06:31:00,162 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-7-0/ddpg.ckpt
+WARNING:tensorflow:From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2026-07-23 06:31:00,178 / WARNING: From /home/pranjal/research/DDPG_MQTT_125/venv/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-8-0/ddpg.ckpt
+2026-07-23 06:31:00,182 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-8-0/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-9-1/ddpg.ckpt
+2026-07-23 06:31:01,212 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-9-1/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-0-1/ddpg.ckpt
+2026-07-23 06:31:01,259 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-0-1/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-2-1/ddpg.ckpt
+2026-07-23 06:31:01,295 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-2-1/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-3-1/ddpg.ckpt
+2026-07-23 06:31:01,368 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-3-1/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-8-1/ddpg.ckpt
+2026-07-23 06:31:01,384 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-8-1/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-6-1/ddpg.ckpt
+2026-07-23 06:31:01,505 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-6-1/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-5-1/ddpg.ckpt
+2026-07-23 06:31:01,582 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-5-1/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-2-2/ddpg.ckpt
+2026-07-23 06:31:02,637 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-2-2/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-6-2/ddpg.ckpt
+2026-07-23 06:31:02,767 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-6-2/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-3-2/ddpg.ckpt
+2026-07-23 06:31:03,143 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-3-2/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-0-2/ddpg.ckpt
+2026-07-23 06:31:03,158 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-0-2/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-5-2/ddpg.ckpt
+2026-07-23 06:31:03,335 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-5-2/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-3-3/ddpg.ckpt
+2026-07-23 06:31:04,531 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-3-3/ddpg.ckpt
+2026-07-23 06:31:19,994 / INFO: Episode 30, Ave step reward 2.187000000000009
+2026-07-23 06:31:21,399 / INFO: Episode 30, Ave step reward 2.1240000000000085
+2026-07-23 06:31:21,898 / INFO: Episode 30, Ave step reward 2.205000000000009
+2026-07-23 06:31:24,202 / INFO: Episode 30, Ave step reward 2.4030000000000102
+2026-07-23 06:31:28,458 / INFO: Episode 30, Ave step reward 2.1510000000000087
+2026-07-23 06:31:28,970 / INFO: Episode 30, Ave step reward 2.169000000000009
+2026-07-23 06:31:29,938 / INFO: Episode 30, Ave step reward 2.2680000000000096
+2026-07-23 06:31:30,243 / INFO: Episode 30, Ave step reward 2.187000000000009
+2026-07-23 06:31:30,485 / INFO: Episode 30, Ave step reward 2.1330000000000084
+2026-07-23 06:31:31,195 / INFO: Episode 30, Ave step reward 2.232000000000009
+2026-07-23 06:31:31,367 / INFO: Episode 30, Ave step reward 2.1060000000000083
+2026-07-23 06:31:31,711 / INFO: Episode 30, Ave step reward 2.0070000000000077
+2026-07-23 06:31:39,111 / INFO: Episode 40, Ave step reward 2.0880000000000085
+2026-07-23 06:31:39,556 / INFO: Episode 40, Ave step reward 2.36700000000001
+2026-07-23 06:31:40,194 / INFO: Episode 40, Ave step reward 2.3850000000000104
+2026-07-23 06:31:43,218 / INFO: Episode 40, Ave step reward 2.34000000000001
+2026-07-23 06:31:50,871 / INFO: Episode 40, Ave step reward 2.223000000000009
+2026-07-23 06:31:51,040 / INFO: Episode 40, Ave step reward 2.187000000000009
+2026-07-23 06:31:51,063 / INFO: Episode 40, Ave step reward 2.0970000000000084
+2026-07-23 06:31:51,924 / INFO: Episode 40, Ave step reward 2.1510000000000087
+2026-07-23 06:31:52,387 / INFO: Episode 40, Ave step reward 2.2140000000000093
+2026-07-23 06:31:52,816 / INFO: Episode 40, Ave step reward 2.28600000000001
+2026-07-23 06:31:53,352 / INFO: Episode 40, Ave step reward 2.187000000000009
+2026-07-23 06:31:53,603 / INFO: Episode 40, Ave step reward 2.2410000000000094
+2026-07-23 06:31:58,945 / INFO: Episode 50, Ave step reward 2.36700000000001
+2026-07-23 06:31:59,113 / INFO: Episode 50, Ave step reward 2.205000000000009
+2026-07-23 06:31:59,799 / INFO: Episode 50, Ave step reward 2.160000000000009
+2026-07-23 06:32:05,119 / INFO: Episode 50, Ave step reward 2.2950000000000097
+2026-07-23 06:32:18,543 / INFO: Episode 50, Ave step reward 2.32200000000001
+2026-07-23 06:32:18,779 / INFO: Episode 50, Ave step reward 2.2410000000000094
+2026-07-23 06:32:19,080 / INFO: Episode 50, Ave step reward 2.2950000000000097
+2026-07-23 06:32:19,154 / INFO: Episode 50, Ave step reward 2.232000000000009
+2026-07-23 06:32:19,333 / INFO: Episode 50, Ave step reward 2.2950000000000097
+2026-07-23 06:32:20,748 / INFO: Episode 50, Ave step reward 2.37600000000001
+2026-07-23 06:32:21,960 / INFO: Episode 50, Ave step reward 2.0700000000000083
+2026-07-23 06:32:23,195 / INFO: Episode 50, Ave step reward 2.28600000000001
+2026-07-23 06:32:24,770 / INFO: Episode 60, Ave step reward 2.4840000000000106
+2026-07-23 06:32:25,407 / INFO: Episode 60, Ave step reward 2.2770000000000095
+2026-07-23 06:32:25,629 / INFO: Episode 60, Ave step reward 2.0610000000000084
+2026-07-23 06:32:30,736 / INFO: Episode 60, Ave step reward 2.36700000000001
+2026-07-23 06:32:40,415 / INFO: Episode 60, Ave step reward 2.160000000000009
+2026-07-23 06:32:40,792 / INFO: Episode 60, Ave step reward 2.223000000000009
+2026-07-23 06:32:40,862 / INFO: Episode 60, Ave step reward 2.178000000000009
+2026-07-23 06:32:41,520 / INFO: Episode 60, Ave step reward 2.4210000000000105
+2026-07-23 06:32:42,410 / INFO: Episode 60, Ave step reward 2.2770000000000095
+2026-07-23 06:32:43,168 / INFO: Episode 60, Ave step reward 2.3310000000000097
+2026-07-23 06:32:43,710 / INFO: Episode 60, Ave step reward 2.2770000000000095
+2026-07-23 06:32:44,173 / INFO: Episode 70, Ave step reward 2.232000000000009
+2026-07-23 06:32:45,198 / INFO: Episode 70, Ave step reward 2.4120000000000106
+2026-07-23 06:32:45,599 / INFO: Episode 60, Ave step reward 2.4300000000000104
+2026-07-23 06:32:46,129 / INFO: Episode 70, Ave step reward 2.223000000000009
+2026-07-23 06:32:51,722 / INFO: Episode 70, Ave step reward 2.466000000000011
+2026-07-23 06:33:02,341 / INFO: Episode 70, Ave step reward 2.4210000000000105
+2026-07-23 06:33:02,497 / INFO: Episode 70, Ave step reward 2.34000000000001
+2026-07-23 06:33:03,372 / INFO: Episode 70, Ave step reward 2.4120000000000106
+2026-07-23 06:33:04,494 / INFO: Episode 80, Ave step reward 2.583000000000011
+2026-07-23 06:33:04,911 / INFO: Episode 70, Ave step reward 2.205000000000009
+2026-07-23 06:33:05,594 / INFO: Episode 80, Ave step reward 2.4030000000000102
+2026-07-23 06:33:06,037 / INFO: Episode 70, Ave step reward 2.32200000000001
+2026-07-23 06:33:07,320 / INFO: Episode 70, Ave step reward 2.655000000000009
+2026-07-23 06:33:07,655 / INFO: Episode 80, Ave step reward 2.37600000000001
+2026-07-23 06:33:07,932 / INFO: Episode 70, Ave step reward 2.34000000000001
+2026-07-23 06:33:07,989 / INFO: Episode 70, Ave step reward 2.4030000000000102
+2026-07-23 06:33:11,730 / INFO: Episode 80, Ave step reward 2.2410000000000094
+2026-07-23 06:33:23,259 / INFO: Episode 90, Ave step reward 2.3850000000000104
+2026-07-23 06:33:24,740 / INFO: Episode 80, Ave step reward 2.4300000000000104
+2026-07-23 06:33:25,258 / INFO: Episode 80, Ave step reward 2.4840000000000106
+2026-07-23 06:33:25,441 / INFO: Episode 90, Ave step reward 2.4210000000000105
+2026-07-23 06:33:26,461 / INFO: Episode 80, Ave step reward 2.2590000000000092
+2026-07-23 06:33:26,524 / INFO: Episode 80, Ave step reward 2.4210000000000105
+2026-07-23 06:33:27,394 / INFO: Episode 90, Ave step reward 2.160000000000009
+2026-07-23 06:33:27,530 / INFO: Episode 80, Ave step reward 2.529000000000011
+2026-07-23 06:33:29,651 / INFO: Episode 80, Ave step reward 2.28600000000001
+2026-07-23 06:33:30,715 / INFO: Episode 80, Ave step reward 2.4390000000000107
+2026-07-23 06:33:30,763 / INFO: Episode 80, Ave step reward 2.502000000000011
+2026-07-23 06:33:31,313 / INFO: Episode 90, Ave step reward 2.4480000000000106
+2026-07-23 06:33:42,455 / INFO: Episode 100, Ave step reward 2.5920000000000107
+2026-07-23 06:33:43,891 / INFO: Episode 100, Ave step reward 2.466000000000011
+2026-07-23 06:33:44,887 / INFO: Episode 100, Ave step reward 2.223000000000009
+2026-07-23 06:33:46,448 / INFO: Episode 90, Ave step reward 2.4750000000000107
+2026-07-23 06:33:46,516 / INFO: Episode 90, Ave step reward 2.4120000000000106
+2026-07-23 06:33:47,382 / INFO: Episode 90, Ave step reward 2.4480000000000106
+2026-07-23 06:33:48,340 / INFO: Episode 90, Ave step reward 2.6730000000000085
+2026-07-23 06:33:48,903 / INFO: Episode 90, Ave step reward 2.4570000000000105
+2026-07-23 06:33:50,964 / INFO: Episode 90, Ave step reward 2.2590000000000092
+2026-07-23 06:33:51,097 / INFO: Episode 90, Ave step reward 2.4840000000000106
+2026-07-23 06:33:51,150 / INFO: Episode 100, Ave step reward 2.32200000000001
+2026-07-23 06:33:52,221 / INFO: Episode 90, Ave step reward 2.4030000000000102
+2026-07-23 06:33:59,768 / INFO: Episode 110, Ave step reward 2.4840000000000106
+2026-07-23 06:34:03,724 / INFO: Episode 110, Ave step reward 2.574000000000011
+2026-07-23 06:34:05,732 / INFO: Episode 110, Ave step reward 2.3040000000000096
+2026-07-23 06:34:06,950 / INFO: Episode 100, Ave step reward 2.4120000000000106
+2026-07-23 06:34:07,000 / INFO: Episode 100, Ave step reward 2.2770000000000095
+2026-07-23 06:34:07,458 / INFO: Episode 100, Ave step reward 2.3850000000000104
+2026-07-23 06:34:08,522 / INFO: Episode 100, Ave step reward 2.5920000000000107
+2026-07-23 06:34:09,218 / INFO: Episode 100, Ave step reward 2.4570000000000105
+2026-07-23 06:34:10,577 / INFO: Episode 110, Ave step reward 2.3850000000000104
+2026-07-23 06:34:12,369 / INFO: Episode 100, Ave step reward 2.466000000000011
+2026-07-23 06:34:12,641 / INFO: Episode 100, Ave step reward 2.4030000000000102
+2026-07-23 06:34:15,558 / INFO: Episode 100, Ave step reward 2.4300000000000104
+2026-07-23 06:34:22,393 / INFO: Episode 120, Ave step reward 2.4750000000000107
+2026-07-23 06:34:26,728 / INFO: Episode 120, Ave step reward 2.493000000000011
+2026-07-23 06:34:32,028 / INFO: Episode 120, Ave step reward 2.2410000000000094
+2026-07-23 06:34:34,657 / INFO: Episode 120, Ave step reward 2.62800000000001
+2026-07-23 06:34:35,262 / INFO: Episode 110, Ave step reward 2.502000000000011
+2026-07-23 06:34:35,586 / INFO: Episode 110, Ave step reward 2.493000000000011
+2026-07-23 06:34:36,131 / INFO: Episode 110, Ave step reward 2.232000000000009
+2026-07-23 06:34:36,678 / INFO: Episode 110, Ave step reward 2.5920000000000107
+2026-07-23 06:34:37,379 / INFO: Episode 110, Ave step reward 2.4570000000000105
+2026-07-23 06:34:37,948 / INFO: Episode 110, Ave step reward 2.4300000000000104
+2026-07-23 06:34:39,216 / INFO: Episode 110, Ave step reward 2.2950000000000097
+2026-07-23 06:34:40,160 / INFO: Episode 110, Ave step reward 2.466000000000011
+2026-07-23 06:34:41,010 / INFO: Episode 130, Ave step reward 2.664000000000009
+2026-07-23 06:34:46,932 / INFO: Episode 130, Ave step reward 2.5470000000000113
+2026-07-23 06:34:51,172 / INFO: Episode 130, Ave step reward 2.31300000000001
+2026-07-23 06:34:54,649 / INFO: Episode 130, Ave step reward 2.529000000000011
+2026-07-23 06:34:57,695 / INFO: Episode 120, Ave step reward 2.520000000000011
+2026-07-23 06:34:57,743 / INFO: Episode 120, Ave step reward 2.502000000000011
+2026-07-23 06:34:58,133 / INFO: Episode 120, Ave step reward 2.6730000000000085
+2026-07-23 06:34:58,158 / INFO: Episode 120, Ave step reward 2.37600000000001
+2026-07-23 06:34:58,986 / INFO: Episode 120, Ave step reward 2.4570000000000105
+2026-07-23 06:34:59,120 / INFO: Episode 120, Ave step reward 2.5110000000000112
+2026-07-23 06:34:59,544 / INFO: Episode 140, Ave step reward 2.7270000000000074
+2026-07-23 06:35:01,033 / INFO: Episode 120, Ave step reward 2.520000000000011
+2026-07-23 06:35:01,579 / INFO: Episode 120, Ave step reward 2.5470000000000113
+2026-07-23 06:35:05,342 / INFO: Episode 140, Ave step reward 2.4390000000000107
+2026-07-23 06:35:09,751 / INFO: Episode 140, Ave step reward 2.2950000000000097
+2026-07-23 06:35:14,484 / INFO: Episode 140, Ave step reward 2.34900000000001
+2026-07-23 06:35:18,098 / INFO: Episode 150, Ave step reward 2.6820000000000084
+2026-07-23 06:35:18,161 / INFO: Episode 130, Ave step reward 2.7990000000000053
+2026-07-23 06:35:18,205 / INFO: Episode 130, Ave step reward 2.556000000000011
+2026-07-23 06:35:18,553 / INFO: Episode 130, Ave step reward 2.556000000000011
+2026-07-23 06:35:19,494 / INFO: Episode 130, Ave step reward 2.493000000000011
+2026-07-23 06:35:19,702 / INFO: Episode 130, Ave step reward 2.493000000000011
+2026-07-23 06:35:20,366 / INFO: Episode 130, Ave step reward 2.6370000000000093
+2026-07-23 06:35:22,395 / INFO: Episode 130, Ave step reward 2.4210000000000105
+2026-07-23 06:35:23,095 / INFO: Episode 130, Ave step reward 2.3940000000000103
+2026-07-23 06:35:24,831 / INFO: Episode 150, Ave step reward 2.35800000000001
+2026-07-23 06:35:28,435 / INFO: Episode 150, Ave step reward 2.4750000000000107
+2026-07-23 06:35:33,628 / INFO: Episode 150, Ave step reward 2.5110000000000112
+2026-07-23 06:35:36,624 / INFO: Episode 160, Ave step reward 2.7450000000000068
+2026-07-23 06:35:38,902 / INFO: Episode 140, Ave step reward 2.5110000000000112
+2026-07-23 06:35:39,206 / INFO: Episode 140, Ave step reward 2.556000000000011
+2026-07-23 06:35:40,077 / INFO: Episode 140, Ave step reward 2.7450000000000068
+2026-07-23 06:35:41,200 / INFO: Episode 140, Ave step reward 2.36700000000001
+2026-07-23 06:35:41,342 / INFO: Episode 140, Ave step reward 2.556000000000011
+2026-07-23 06:35:42,746 / INFO: Episode 140, Ave step reward 2.4750000000000107
+2026-07-23 06:35:44,183 / INFO: Episode 160, Ave step reward 2.61900000000001
+2026-07-23 06:35:44,328 / INFO: Episode 140, Ave step reward 2.37600000000001
+2026-07-23 06:35:44,539 / INFO: Episode 140, Ave step reward 2.502000000000011
+2026-07-23 06:35:49,162 / INFO: Episode 160, Ave step reward 2.4570000000000105
+2026-07-23 06:35:51,442 / INFO: Episode 160, Ave step reward 2.5110000000000112
+2026-07-23 06:35:55,326 / INFO: Episode 170, Ave step reward 2.808000000000005
+2026-07-23 06:35:59,202 / INFO: Episode 150, Ave step reward 2.556000000000011
+2026-07-23 06:35:59,428 / INFO: Episode 150, Ave step reward 2.5650000000000115
+2026-07-23 06:36:00,044 / INFO: Episode 150, Ave step reward 2.8800000000000034
+2026-07-23 06:36:00,250 / INFO: Episode 150, Ave step reward 2.5470000000000113
+2026-07-23 06:36:00,975 / INFO: Episode 150, Ave step reward 2.4570000000000105
+2026-07-23 06:36:01,104 / INFO: Episode 170, Ave step reward 2.556000000000011
+2026-07-23 06:36:03,622 / INFO: Episode 150, Ave step reward 2.61900000000001
+2026-07-23 06:36:04,155 / INFO: Episode 150, Ave step reward 2.583000000000011
+2026-07-23 06:36:04,527 / INFO: Episode 150, Ave step reward 2.6010000000000106
+2026-07-23 06:36:06,026 / INFO: Episode 170, Ave step reward 2.4030000000000102
+2026-07-23 06:36:08,396 / INFO: Episode 170, Ave step reward 2.520000000000011
+2026-07-23 06:36:13,696 / INFO: Episode 180, Ave step reward 2.7270000000000074
+2026-07-23 06:36:17,594 / INFO: Episode 180, Ave step reward 2.574000000000011
+2026-07-23 06:36:18,517 / INFO: Episode 160, Ave step reward 2.493000000000011
+2026-07-23 06:36:19,633 / INFO: Episode 160, Ave step reward 2.61000000000001
+2026-07-23 06:36:19,937 / INFO: Episode 160, Ave step reward 2.736000000000007
+2026-07-23 06:36:21,204 / INFO: Episode 160, Ave step reward 2.529000000000011
+2026-07-23 06:36:21,370 / INFO: Episode 160, Ave step reward 2.37600000000001
+2026-07-23 06:36:23,442 / INFO: Episode 160, Ave step reward 2.574000000000011
+2026-07-23 06:36:23,815 / INFO: Episode 160, Ave step reward 2.5380000000000114
+2026-07-23 06:36:24,090 / INFO: Episode 160, Ave step reward 2.4570000000000105
+2026-07-23 06:36:24,728 / INFO: Episode 180, Ave step reward 2.3940000000000103
+2026-07-23 06:36:24,822 / INFO: Episode 180, Ave step reward 2.4840000000000106
+2026-07-23 06:36:32,173 / INFO: Episode 190, Ave step reward 2.772000000000006
+2026-07-23 06:36:36,474 / INFO: Episode 190, Ave step reward 2.5110000000000112
+2026-07-23 06:36:39,025 / INFO: Episode 170, Ave step reward 2.8440000000000043
+2026-07-23 06:36:39,466 / INFO: Episode 170, Ave step reward 2.466000000000011
+2026-07-23 06:36:39,954 / INFO: Episode 170, Ave step reward 2.4840000000000106
+2026-07-23 06:36:41,092 / INFO: Episode 170, Ave step reward 2.62800000000001
+2026-07-23 06:36:42,207 / INFO: Episode 170, Ave step reward 2.4480000000000106
+2026-07-23 06:36:43,164 / INFO: Episode 170, Ave step reward 2.4840000000000106
+2026-07-23 06:36:43,175 / INFO: Episode 190, Ave step reward 2.4300000000000104
+2026-07-23 06:36:43,418 / INFO: Episode 190, Ave step reward 2.61000000000001
+2026-07-23 06:36:44,768 / INFO: Episode 170, Ave step reward 2.5650000000000115
+2026-07-23 06:36:44,920 / INFO: Episode 170, Ave step reward 2.574000000000011
+2026-07-23 06:36:50,849 / INFO: Episode 200, Ave step reward 2.898000000000003
+2026-07-23 06:36:55,228 / INFO: Episode 200, Ave step reward 2.62800000000001
+2026-07-23 06:36:59,141 / INFO: Episode 180, Ave step reward 2.4210000000000105
+2026-07-23 06:36:59,305 / INFO: Episode 180, Ave step reward 2.898000000000003
+2026-07-23 06:36:59,440 / INFO: Episode 180, Ave step reward 2.493000000000011
+2026-07-23 06:37:00,364 / INFO: Episode 180, Ave step reward 2.529000000000011
+2026-07-23 06:37:03,229 / INFO: Episode 200, Ave step reward 2.61000000000001
+2026-07-23 06:37:03,861 / INFO: Episode 200, Ave step reward 2.4840000000000106
+2026-07-23 06:37:04,149 / INFO: Episode 180, Ave step reward 2.583000000000011
+2026-07-23 06:37:05,923 / INFO: Episode 180, Ave step reward 2.772000000000006
+2026-07-23 06:37:06,044 / INFO: Episode 180, Ave step reward 2.4120000000000106
+2026-07-23 06:37:06,739 / INFO: Episode 180, Ave step reward 2.466000000000011
+2026-07-23 06:37:09,439 / INFO: Episode 210, Ave step reward 2.736000000000007
+2026-07-23 06:37:16,006 / INFO: Episode 210, Ave step reward 2.5920000000000107
+2026-07-23 06:37:20,359 / INFO: Episode 190, Ave step reward 2.808000000000005
+2026-07-23 06:37:20,425 / INFO: Episode 190, Ave step reward 2.700000000000008
+2026-07-23 06:37:21,676 / INFO: Episode 190, Ave step reward 2.4210000000000105
+2026-07-23 06:37:21,775 / INFO: Episode 190, Ave step reward 2.4210000000000105
+2026-07-23 06:37:22,932 / INFO: Episode 210, Ave step reward 2.556000000000011
+2026-07-23 06:37:23,324 / INFO: Episode 210, Ave step reward 2.34900000000001
+2026-07-23 06:37:25,073 / INFO: Episode 190, Ave step reward 2.4480000000000106
+2026-07-23 06:37:28,193 / INFO: Episode 190, Ave step reward 2.664000000000009
+2026-07-23 06:37:28,404 / INFO: Episode 190, Ave step reward 2.5650000000000115
+2026-07-23 06:37:28,916 / INFO: Episode 190, Ave step reward 2.5650000000000115
+2026-07-23 06:37:29,609 / INFO: Episode 220, Ave step reward 2.700000000000008
+2026-07-23 06:37:34,989 / INFO: Episode 220, Ave step reward 2.529000000000011
+2026-07-23 06:37:44,282 / INFO: Episode 200, Ave step reward 2.5110000000000112
+2026-07-23 06:37:44,447 / INFO: Episode 220, Ave step reward 2.583000000000011
+2026-07-23 06:37:44,607 / INFO: Episode 200, Ave step reward 2.5110000000000112
+2026-07-23 06:37:44,634 / INFO: Episode 220, Ave step reward 2.466000000000011
+2026-07-23 06:37:44,762 / INFO: Episode 200, Ave step reward 2.4120000000000106
+2026-07-23 06:37:44,977 / INFO: Episode 200, Ave step reward 2.943000000000002
+2026-07-23 06:37:48,629 / INFO: Episode 200, Ave step reward 2.5470000000000113
+2026-07-23 06:37:49,627 / INFO: Episode 200, Ave step reward 2.61000000000001
+2026-07-23 06:37:51,325 / INFO: Episode 200, Ave step reward 2.583000000000011
+2026-07-23 06:37:51,768 / INFO: Episode 230, Ave step reward 2.8350000000000044
+2026-07-23 06:37:52,836 / INFO: Episode 200, Ave step reward 2.5470000000000113
+2026-07-23 06:37:55,772 / INFO: Episode 230, Ave step reward 2.655000000000009
+2026-07-23 06:38:04,189 / INFO: Episode 230, Ave step reward 2.529000000000011
+2026-07-23 06:38:05,502 / INFO: Episode 210, Ave step reward 2.664000000000009
+2026-07-23 06:38:05,632 / INFO: Episode 230, Ave step reward 2.493000000000011
+2026-07-23 06:38:06,259 / INFO: Episode 210, Ave step reward 2.9520000000000017
+2026-07-23 06:38:06,305 / INFO: Episode 210, Ave step reward 2.4750000000000107
+2026-07-23 06:38:08,342 / INFO: Episode 210, Ave step reward 2.5110000000000112
+2026-07-23 06:38:10,872 / INFO: Episode 210, Ave step reward 2.36700000000001
+2026-07-23 06:38:11,561 / INFO: Episode 240, Ave step reward 2.7270000000000074
+2026-07-23 06:38:12,030 / INFO: Episode 210, Ave step reward 2.5650000000000115
+2026-07-23 06:38:13,988 / INFO: Episode 210, Ave step reward 2.6460000000000092
+2026-07-23 06:38:16,707 / INFO: Episode 240, Ave step reward 2.556000000000011
+2026-07-23 06:38:17,742 / INFO: Episode 210, Ave step reward 2.6370000000000093
+2026-07-23 06:38:27,065 / INFO: Episode 240, Ave step reward 2.61000000000001
+2026-07-23 06:38:28,323 / INFO: Episode 220, Ave step reward 2.8890000000000033
+2026-07-23 06:38:28,835 / INFO: Episode 240, Ave step reward 2.4570000000000105
+2026-07-23 06:38:30,718 / INFO: Episode 220, Ave step reward 2.556000000000011
+2026-07-23 06:38:31,334 / INFO: Episode 220, Ave step reward 2.493000000000011
+2026-07-23 06:38:31,860 / INFO: Episode 220, Ave step reward 2.556000000000011
+2026-07-23 06:38:33,149 / INFO: Episode 250, Ave step reward 2.853000000000004
+2026-07-23 06:38:35,715 / INFO: Episode 220, Ave step reward 2.493000000000011
+2026-07-23 06:38:37,513 / INFO: Episode 250, Ave step reward 2.5920000000000107
+2026-07-23 06:38:37,907 / INFO: Episode 220, Ave step reward 2.6910000000000083
+2026-07-23 06:38:39,084 / INFO: Episode 220, Ave step reward 2.6370000000000093
+2026-07-23 06:38:41,500 / INFO: Episode 220, Ave step reward 2.736000000000007
+2026-07-23 06:38:49,456 / INFO: Episode 250, Ave step reward 2.664000000000009
+2026-07-23 06:38:53,023 / INFO: Episode 230, Ave step reward 2.8890000000000033
+2026-07-23 06:38:53,869 / INFO: Episode 250, Ave step reward 2.4120000000000106
+2026-07-23 06:38:55,781 / INFO: Episode 230, Ave step reward 2.5470000000000113
+2026-07-23 06:38:55,966 / INFO: Episode 260, Ave step reward 2.853000000000004
+2026-07-23 06:38:56,163 / INFO: Episode 230, Ave step reward 2.61900000000001
+2026-07-23 06:38:57,899 / INFO: Episode 230, Ave step reward 2.6730000000000085
+2026-07-23 06:38:59,563 / INFO: Episode 260, Ave step reward 2.7090000000000076
+2026-07-23 06:38:59,971 / INFO: Episode 230, Ave step reward 2.520000000000011
+2026-07-23 06:39:02,935 / INFO: Episode 230, Ave step reward 2.556000000000011
+2026-07-23 06:39:04,555 / INFO: Episode 230, Ave step reward 2.4300000000000104
+2026-07-23 06:39:06,948 / INFO: Episode 230, Ave step reward 2.61000000000001
+2026-07-23 06:39:11,152 / INFO: Episode 260, Ave step reward 2.62800000000001
+2026-07-23 06:39:16,096 / INFO: Episode 260, Ave step reward 2.574000000000011
+2026-07-23 06:39:16,703 / INFO: Episode 240, Ave step reward 3.0689999999999986
+2026-07-23 06:39:16,790 / INFO: Episode 270, Ave step reward 2.853000000000004
+2026-07-23 06:39:18,732 / INFO: Episode 240, Ave step reward 2.5650000000000115
+2026-07-23 06:39:19,603 / INFO: Episode 240, Ave step reward 2.4750000000000107
+2026-07-23 06:39:20,375 / INFO: Episode 270, Ave step reward 2.574000000000011
+2026-07-23 06:39:21,555 / INFO: Episode 240, Ave step reward 2.5470000000000113
+2026-07-23 06:39:22,037 / INFO: Episode 240, Ave step reward 2.556000000000011
+2026-07-23 06:39:25,781 / INFO: Episode 240, Ave step reward 2.61900000000001
+2026-07-23 06:39:27,803 / INFO: Episode 240, Ave step reward 2.5650000000000115
+2026-07-23 06:39:28,997 / INFO: Episode 240, Ave step reward 2.5470000000000113
+2026-07-23 06:39:29,907 / INFO: Episode 270, Ave step reward 2.556000000000011
+2026-07-23 06:39:36,264 / INFO: Episode 280, Ave step reward 2.9250000000000025
+2026-07-23 06:39:36,708 / INFO: Episode 270, Ave step reward 2.655000000000009
+2026-07-23 06:39:39,168 / INFO: Episode 250, Ave step reward 2.943000000000002
+2026-07-23 06:39:41,281 / INFO: Episode 280, Ave step reward 2.655000000000009
+2026-07-23 06:39:42,354 / INFO: Episode 250, Ave step reward 2.62800000000001
+2026-07-23 06:39:43,241 / INFO: Episode 250, Ave step reward 2.7270000000000074
+2026-07-23 06:39:45,205 / INFO: Episode 250, Ave step reward 2.6910000000000083
+2026-07-23 06:39:46,441 / INFO: Episode 250, Ave step reward 2.5920000000000107
+2026-07-23 06:39:47,934 / INFO: Episode 250, Ave step reward 2.520000000000011
+2026-07-23 06:39:49,942 / INFO: Episode 280, Ave step reward 2.5920000000000107
+2026-07-23 06:39:50,783 / INFO: Episode 250, Ave step reward 2.61900000000001
+2026-07-23 06:39:53,590 / INFO: Episode 250, Ave step reward 2.556000000000011
+2026-07-23 06:39:57,979 / INFO: Episode 290, Ave step reward 2.8440000000000043
+2026-07-23 06:39:58,070 / INFO: Episode 280, Ave step reward 2.5920000000000107
+2026-07-23 06:40:01,144 / INFO: Episode 290, Ave step reward 2.529000000000011
+2026-07-23 06:40:02,691 / INFO: Episode 260, Ave step reward 2.853000000000004
+2026-07-23 06:40:06,181 / INFO: Episode 260, Ave step reward 2.529000000000011
+2026-07-23 06:40:07,895 / INFO: Episode 260, Ave step reward 2.664000000000009
+2026-07-23 06:40:09,901 / INFO: Episode 260, Ave step reward 2.6370000000000093
+2026-07-23 06:40:10,432 / INFO: Episode 260, Ave step reward 2.61900000000001
+2026-07-23 06:40:11,444 / INFO: Episode 290, Ave step reward 2.6910000000000083
+2026-07-23 06:40:12,210 / INFO: Episode 260, Ave step reward 2.4750000000000107
+2026-07-23 06:40:15,596 / INFO: Episode 260, Ave step reward 2.502000000000011
+2026-07-23 06:40:18,839 / INFO: Episode 290, Ave step reward 2.4300000000000104
+2026-07-23 06:40:18,874 / INFO: Episode 300, Ave step reward 2.7270000000000074
+2026-07-23 06:40:18,883 / INFO: Episode 260, Ave step reward 2.5110000000000112
+2026-07-23 06:40:24,351 / INFO: Episode 300, Ave step reward 2.4840000000000106
+2026-07-23 06:40:24,938 / INFO: Episode 270, Ave step reward 3.015
+2026-07-23 06:40:29,504 / INFO: Episode 270, Ave step reward 2.6460000000000092
+2026-07-23 06:40:30,156 / INFO: Episode 270, Ave step reward 2.529000000000011
+2026-07-23 06:40:33,771 / INFO: Episode 300, Ave step reward 2.6460000000000092
+2026-07-23 06:40:34,788 / INFO: Episode 270, Ave step reward 2.5920000000000107
+2026-07-23 06:40:34,804 / INFO: Episode 270, Ave step reward 2.5380000000000114
+2026-07-23 06:40:36,636 / INFO: Episode 270, Ave step reward 2.5920000000000107
+2026-07-23 06:40:39,157 / INFO: Episode 310, Ave step reward 2.781000000000006
+2026-07-23 06:40:39,216 / INFO: Episode 270, Ave step reward 2.5110000000000112
+2026-07-23 06:40:40,107 / INFO: Episode 300, Ave step reward 2.493000000000011
+2026-07-23 06:40:42,308 / INFO: Episode 270, Ave step reward 2.520000000000011
+2026-07-23 06:40:43,291 / INFO: Episode 310, Ave step reward 2.6820000000000084
+2026-07-23 06:40:46,298 / INFO: Episode 280, Ave step reward 2.9970000000000003
+2026-07-23 06:40:53,615 / INFO: Episode 280, Ave step reward 2.583000000000011
+2026-07-23 06:40:53,922 / INFO: Episode 310, Ave step reward 2.6730000000000085
+2026-07-23 06:40:53,975 / INFO: Episode 280, Ave step reward 2.61000000000001
+2026-07-23 06:40:57,272 / INFO: Episode 280, Ave step reward 2.62800000000001
+2026-07-23 06:40:57,856 / INFO: Episode 280, Ave step reward 2.583000000000011
+2026-07-23 06:40:58,576 / INFO: Episode 320, Ave step reward 2.9160000000000026
+2026-07-23 06:40:58,861 / INFO: Episode 280, Ave step reward 2.4570000000000105
+2026-07-23 06:40:59,056 / INFO: Episode 310, Ave step reward 2.4030000000000102
+2026-07-23 06:41:01,243 / INFO: Episode 280, Ave step reward 2.28600000000001
+2026-07-23 06:41:03,880 / INFO: Episode 320, Ave step reward 2.6010000000000106
+2026-07-23 06:41:04,561 / INFO: Episode 280, Ave step reward 2.655000000000009
+2026-07-23 06:41:07,305 / INFO: Episode 290, Ave step reward 3.0509999999999993
+2026-07-23 06:41:13,777 / INFO: Episode 320, Ave step reward 2.7180000000000075
+2026-07-23 06:41:16,629 / INFO: Episode 290, Ave step reward 2.61000000000001
+2026-07-23 06:41:17,201 / INFO: Episode 290, Ave step reward 2.4570000000000105
+2026-07-23 06:41:18,840 / INFO: Episode 330, Ave step reward 2.61000000000001
+2026-07-23 06:41:20,931 / INFO: Episode 290, Ave step reward 2.61000000000001
+2026-07-23 06:41:21,157 / INFO: Episode 320, Ave step reward 2.5650000000000115
+2026-07-23 06:41:22,045 / INFO: Episode 290, Ave step reward 2.5650000000000115
+2026-07-23 06:41:22,842 / INFO: Episode 290, Ave step reward 2.6820000000000084
+2026-07-23 06:41:23,613 / INFO: Episode 290, Ave step reward 2.556000000000011
+2026-07-23 06:41:25,926 / INFO: Episode 330, Ave step reward 2.655000000000009
+2026-07-23 06:41:28,039 / INFO: Episode 290, Ave step reward 2.6910000000000083
+2026-07-23 06:41:28,245 / INFO: Episode 300, Ave step reward 3.0060000000000002
+2026-07-23 06:41:33,389 / INFO: Episode 330, Ave step reward 2.6010000000000106
+2026-07-23 06:41:38,307 / INFO: Episode 300, Ave step reward 2.5650000000000115
+2026-07-23 06:41:39,020 / INFO: Episode 340, Ave step reward 2.7450000000000068
+2026-07-23 06:41:40,547 / INFO: Episode 300, Ave step reward 2.62800000000001
+2026-07-23 06:41:42,195 / INFO: Episode 300, Ave step reward 2.7090000000000076
+2026-07-23 06:41:42,232 / INFO: Episode 330, Ave step reward 2.5110000000000112
+2026-07-23 06:41:44,081 / INFO: Episode 300, Ave step reward 2.583000000000011
+2026-07-23 06:41:44,256 / INFO: Episode 300, Ave step reward 2.7090000000000076
+2026-07-23 06:41:46,904 / INFO: Episode 340, Ave step reward 2.583000000000011
+2026-07-23 06:41:47,288 / INFO: Episode 300, Ave step reward 2.655000000000009
+2026-07-23 06:41:50,438 / INFO: Episode 300, Ave step reward 2.502000000000011
+2026-07-23 06:41:51,346 / INFO: Episode 310, Ave step reward 2.979000000000001
+2026-07-23 06:41:54,665 / INFO: Episode 340, Ave step reward 2.790000000000006
+2026-07-23 06:41:59,054 / INFO: Episode 350, Ave step reward 2.6730000000000085
+2026-07-23 06:42:00,117 / INFO: Episode 310, Ave step reward 2.7270000000000074
+2026-07-23 06:42:03,023 / INFO: Episode 340, Ave step reward 2.61900000000001
+2026-07-23 06:42:03,304 / INFO: Episode 310, Ave step reward 2.520000000000011
+2026-07-23 06:42:05,666 / INFO: Episode 310, Ave step reward 2.4030000000000102
+2026-07-23 06:42:06,039 / INFO: Episode 310, Ave step reward 2.700000000000008
+2026-07-23 06:42:07,712 / INFO: Episode 310, Ave step reward 2.6370000000000093
+2026-07-23 06:42:09,633 / INFO: Episode 350, Ave step reward 2.6910000000000083
+2026-07-23 06:42:11,471 / INFO: Episode 310, Ave step reward 2.4120000000000106
+2026-07-23 06:42:13,058 / INFO: Episode 310, Ave step reward 2.7180000000000075
+2026-07-23 06:42:14,361 / INFO: Episode 320, Ave step reward 3.095999999999998
+2026-07-23 06:42:17,067 / INFO: Episode 350, Ave step reward 2.5650000000000115
+2026-07-23 06:42:18,134 / INFO: Episode 360, Ave step reward 2.7630000000000066
+2026-07-23 06:42:21,860 / INFO: Episode 320, Ave step reward 2.61900000000001
+2026-07-23 06:42:23,231 / INFO: Episode 350, Ave step reward 2.35800000000001
+2026-07-23 06:42:25,002 / INFO: Episode 320, Ave step reward 2.6460000000000092
+2026-07-23 06:42:28,794 / INFO: Episode 320, Ave step reward 2.4750000000000107
+2026-07-23 06:42:30,302 / INFO: Episode 360, Ave step reward 2.556000000000011
+2026-07-23 06:42:30,348 / INFO: Episode 320, Ave step reward 2.664000000000009
+2026-07-23 06:42:33,005 / INFO: Episode 320, Ave step reward 2.6820000000000084
+2026-07-23 06:42:35,532 / INFO: Episode 320, Ave step reward 2.5110000000000112
+2026-07-23 06:42:36,101 / INFO: Episode 320, Ave step reward 2.700000000000008
+2026-07-23 06:42:37,459 / INFO: Episode 330, Ave step reward 2.9970000000000003
+2026-07-23 06:42:38,480 / INFO: Episode 360, Ave step reward 2.529000000000011
+2026-07-23 06:42:38,714 / INFO: Episode 370, Ave step reward 2.664000000000009
+2026-07-23 06:42:44,398 / INFO: Episode 360, Ave step reward 2.4840000000000106
+2026-07-23 06:42:45,387 / INFO: Episode 330, Ave step reward 2.5110000000000112
+2026-07-23 06:42:49,443 / INFO: Episode 330, Ave step reward 2.6010000000000106
+2026-07-23 06:42:49,945 / INFO: Episode 370, Ave step reward 2.655000000000009
+2026-07-23 06:42:51,419 / INFO: Episode 330, Ave step reward 2.529000000000011
+2026-07-23 06:42:53,702 / INFO: Episode 330, Ave step reward 2.556000000000011
+2026-07-23 06:42:57,419 / INFO: Episode 330, Ave step reward 2.6460000000000092
+2026-07-23 06:42:59,047 / INFO: Episode 330, Ave step reward 2.6730000000000085
+2026-07-23 06:42:59,148 / INFO: Episode 380, Ave step reward 2.7990000000000053
+2026-07-23 06:42:59,352 / INFO: Episode 370, Ave step reward 2.6460000000000092
+2026-07-23 06:43:00,579 / INFO: Episode 330, Ave step reward 2.4120000000000106
+2026-07-23 06:43:01,437 / INFO: Episode 340, Ave step reward 3.122999999999997
+2026-07-23 06:43:06,211 / INFO: Episode 370, Ave step reward 2.6010000000000106
+2026-07-23 06:43:09,127 / INFO: Episode 340, Ave step reward 2.664000000000009
+2026-07-23 06:43:12,106 / INFO: Episode 380, Ave step reward 2.61900000000001
+2026-07-23 06:43:13,467 / INFO: Episode 340, Ave step reward 2.6820000000000084
+2026-07-23 06:43:14,983 / INFO: Episode 340, Ave step reward 2.5920000000000107
+2026-07-23 06:43:15,385 / INFO: Episode 340, Ave step reward 2.4750000000000107
+2026-07-23 06:43:18,428 / INFO: Episode 390, Ave step reward 2.6910000000000083
+2026-07-23 06:43:20,383 / INFO: Episode 340, Ave step reward 2.7090000000000076
+2026-07-23 06:43:20,421 / INFO: Episode 380, Ave step reward 2.529000000000011
+2026-07-23 06:43:21,963 / INFO: Episode 340, Ave step reward 2.7540000000000067
+2026-07-23 06:43:24,052 / INFO: Episode 340, Ave step reward 2.4570000000000105
+2026-07-23 06:43:24,259 / INFO: Episode 350, Ave step reward 3.122999999999997
+2026-07-23 06:43:27,727 / INFO: Episode 380, Ave step reward 2.655000000000009
+2026-07-23 06:43:32,370 / INFO: Episode 350, Ave step reward 2.3850000000000104
+2026-07-23 06:43:32,809 / INFO: Episode 390, Ave step reward 2.664000000000009
+2026-07-23 06:43:36,998 / INFO: Episode 400, Ave step reward 2.817000000000005
+2026-07-23 06:43:37,623 / INFO: Episode 350, Ave step reward 2.5920000000000107
+2026-07-23 06:43:38,416 / INFO: Episode 350, Ave step reward 2.7180000000000075
+2026-07-23 06:43:38,471 / INFO: Episode 350, Ave step reward 2.583000000000011
+2026-07-23 06:43:41,252 / INFO: Episode 350, Ave step reward 2.7090000000000076
+2026-07-23 06:43:41,738 / INFO: Episode 390, Ave step reward 2.6820000000000084
+2026-07-23 06:43:45,488 / INFO: Episode 350, Ave step reward 2.700000000000008
+2026-07-23 06:43:47,099 / INFO: Episode 350, Ave step reward 2.4750000000000107
+2026-07-23 06:43:48,343 / INFO: Episode 390, Ave step reward 2.6460000000000092
+2026-07-23 06:43:48,428 / INFO: Episode 360, Ave step reward 3.0689999999999986
+2026-07-23 06:43:50,942 / INFO: Episode 400, Ave step reward 2.6370000000000093
+2026-07-23 06:43:55,542 / INFO: Episode 360, Ave step reward 2.5110000000000112
+2026-07-23 06:43:57,665 / INFO: Episode 410, Ave step reward 2.9070000000000027
+2026-07-23 06:43:58,992 / INFO: Episode 360, Ave step reward 2.6460000000000092
+2026-07-23 06:43:59,211 / INFO: Episode 360, Ave step reward 2.7540000000000067
+2026-07-23 06:44:00,250 / INFO: Episode 360, Ave step reward 2.6730000000000085
+2026-07-23 06:44:01,574 / INFO: Episode 400, Ave step reward 2.5110000000000112
+2026-07-23 06:44:03,389 / INFO: Episode 360, Ave step reward 2.6010000000000106
+2026-07-23 06:44:08,074 / INFO: Episode 360, Ave step reward 2.62800000000001
+2026-07-23 06:44:09,145 / INFO: Episode 400, Ave step reward 2.5470000000000113
+2026-07-23 06:44:12,397 / INFO: Episode 360, Ave step reward 2.6010000000000106
+2026-07-23 06:44:12,420 / INFO: Episode 410, Ave step reward 2.5920000000000107
+2026-07-23 06:44:12,822 / INFO: Episode 370, Ave step reward 3.0509999999999993
+2026-07-23 06:44:17,043 / INFO: Episode 420, Ave step reward 2.853000000000004
+2026-07-23 06:44:17,077 / INFO: Episode 370, Ave step reward 2.6010000000000106
+2026-07-23 06:44:20,318 / INFO: Episode 410, Ave step reward 2.62800000000001
+2026-07-23 06:44:21,841 / INFO: Episode 370, Ave step reward 2.6460000000000092
+2026-07-23 06:44:21,870 / INFO: Episode 370, Ave step reward 2.6820000000000084
+2026-07-23 06:44:22,648 / INFO: Episode 370, Ave step reward 2.781000000000006
+2026-07-23 06:44:28,090 / INFO: Episode 370, Ave step reward 2.502000000000011
+2026-07-23 06:44:30,034 / INFO: Episode 410, Ave step reward 2.4840000000000106
+2026-07-23 06:44:30,203 / INFO: Episode 370, Ave step reward 2.655000000000009
+2026-07-23 06:44:33,971 / INFO: Episode 420, Ave step reward 2.655000000000009
+2026-07-23 06:44:34,551 / INFO: Episode 370, Ave step reward 2.4570000000000105
+2026-07-23 06:44:34,917 / INFO: Episode 380, Ave step reward 3.0419999999999994
+2026-07-23 06:44:36,463 / INFO: Episode 430, Ave step reward 2.8440000000000043
+2026-07-23 06:44:39,800 / INFO: Episode 380, Ave step reward 2.61900000000001
+2026-07-23 06:44:40,888 / INFO: Episode 420, Ave step reward 2.61900000000001
+2026-07-23 06:44:42,949 / INFO: Episode 380, Ave step reward 2.6010000000000106
+2026-07-23 06:44:44,341 / INFO: Episode 380, Ave step reward 2.62800000000001
+2026-07-23 06:44:45,751 / INFO: Episode 380, Ave step reward 2.62800000000001
+2026-07-23 06:44:50,673 / INFO: Episode 420, Ave step reward 2.466000000000011
+2026-07-23 06:44:51,431 / INFO: Episode 380, Ave step reward 2.6010000000000106
+2026-07-23 06:44:53,003 / INFO: Episode 380, Ave step reward 2.574000000000011
+2026-07-23 06:44:53,932 / INFO: Episode 430, Ave step reward 2.502000000000011
+2026-07-23 06:44:55,616 / INFO: Episode 440, Ave step reward 2.9250000000000025
+2026-07-23 06:44:57,494 / INFO: Episode 380, Ave step reward 2.61000000000001
+2026-07-23 06:44:57,507 / INFO: Episode 390, Ave step reward 3.140999999999997
+2026-07-23 06:45:00,062 / INFO: Episode 430, Ave step reward 2.655000000000009
+2026-07-23 06:45:01,872 / INFO: Episode 390, Ave step reward 2.655000000000009
+2026-07-23 06:45:06,397 / INFO: Episode 390, Ave step reward 2.583000000000011
+2026-07-23 06:45:06,646 / INFO: Episode 390, Ave step reward 2.6910000000000083
+2026-07-23 06:45:07,096 / INFO: Episode 390, Ave step reward 2.6730000000000085
+2026-07-23 06:45:10,137 / INFO: Episode 430, Ave step reward 2.4210000000000105
+2026-07-23 06:45:15,802 / INFO: Episode 440, Ave step reward 2.7180000000000075
+2026-07-23 06:45:16,201 / INFO: Episode 390, Ave step reward 2.6730000000000085
+2026-07-23 06:45:16,886 / INFO: Episode 450, Ave step reward 2.7540000000000067
+2026-07-23 06:45:17,304 / INFO: Episode 390, Ave step reward 2.62800000000001
+2026-07-23 06:45:21,059 / INFO: Episode 440, Ave step reward 2.772000000000006
+2026-07-23 06:45:21,169 / INFO: Episode 390, Ave step reward 2.4480000000000106
+2026-07-23 06:45:21,653 / INFO: Episode 400, Ave step reward 3.0689999999999986
+2026-07-23 06:45:24,332 / INFO: Episode 400, Ave step reward 2.5920000000000107
+2026-07-23 06:45:29,489 / INFO: Episode 400, Ave step reward 2.61900000000001
+2026-07-23 06:45:30,392 / INFO: Episode 400, Ave step reward 2.6370000000000093
+2026-07-23 06:45:31,128 / INFO: Episode 400, Ave step reward 2.529000000000011
+2026-07-23 06:45:31,646 / INFO: Episode 440, Ave step reward 2.664000000000009
+2026-07-23 06:45:36,704 / INFO: Episode 460, Ave step reward 2.826000000000005
+2026-07-23 06:45:37,492 / INFO: Episode 450, Ave step reward 2.7090000000000076
+2026-07-23 06:45:39,447 / INFO: Episode 400, Ave step reward 2.700000000000008
+2026-07-23 06:45:41,233 / INFO: Episode 400, Ave step reward 2.62800000000001
+2026-07-23 06:45:43,493 / INFO: Episode 450, Ave step reward 2.5110000000000112
+2026-07-23 06:45:45,589 / INFO: Episode 410, Ave step reward 2.8890000000000033
+2026-07-23 06:45:46,034 / INFO: Episode 400, Ave step reward 2.5920000000000107
+2026-07-23 06:45:50,626 / INFO: Episode 410, Ave step reward 2.736000000000007
+2026-07-23 06:45:54,162 / INFO: Episode 410, Ave step reward 2.61000000000001
+2026-07-23 06:45:54,223 / INFO: Episode 410, Ave step reward 2.6910000000000083
+2026-07-23 06:45:54,381 / INFO: Episode 450, Ave step reward 2.6820000000000084
+2026-07-23 06:45:55,178 / INFO: Episode 410, Ave step reward 2.655000000000009
+2026-07-23 06:45:56,511 / INFO: Episode 470, Ave step reward 2.7540000000000067
+2026-07-23 06:45:57,929 / INFO: Episode 460, Ave step reward 2.5650000000000115
+2026-07-23 06:46:03,944 / INFO: Episode 410, Ave step reward 2.664000000000009
+2026-07-23 06:46:04,376 / INFO: Episode 460, Ave step reward 2.664000000000009
+2026-07-23 06:46:06,023 / INFO: Episode 410, Ave step reward 2.61000000000001
+2026-07-23 06:46:07,347 / INFO: Episode 420, Ave step reward 3.0060000000000002
+2026-07-23 06:46:09,971 / INFO: Episode 410, Ave step reward 2.4030000000000102
+2026-07-23 06:46:13,811 / INFO: Episode 420, Ave step reward 2.6370000000000093
+2026-07-23 06:46:14,975 / INFO: Episode 460, Ave step reward 2.466000000000011
+2026-07-23 06:46:17,714 / INFO: Episode 420, Ave step reward 2.655000000000009
+2026-07-23 06:46:17,986 / INFO: Episode 420, Ave step reward 2.5380000000000114
+2026-07-23 06:46:19,109 / INFO: Episode 480, Ave step reward 2.7270000000000074
+2026-07-23 06:46:19,545 / INFO: Episode 470, Ave step reward 2.5380000000000114
+2026-07-23 06:46:20,380 / INFO: Episode 420, Ave step reward 2.4750000000000107
+2026-07-23 06:46:26,700 / INFO: Episode 470, Ave step reward 2.6820000000000084
+2026-07-23 06:46:28,583 / INFO: Episode 420, Ave step reward 2.736000000000007
+2026-07-23 06:46:29,057 / INFO: Episode 430, Ave step reward 3.0329999999999995
+2026-07-23 06:46:30,619 / INFO: Episode 420, Ave step reward 2.655000000000009
+2026-07-23 06:46:34,680 / INFO: Episode 420, Ave step reward 2.529000000000011
+2026-07-23 06:46:37,688 / INFO: Episode 470, Ave step reward 2.556000000000011
+2026-07-23 06:46:38,475 / INFO: Episode 430, Ave step reward 2.6010000000000106
+2026-07-23 06:46:39,748 / INFO: Episode 490, Ave step reward 2.7990000000000053
+2026-07-23 06:46:40,891 / INFO: Episode 430, Ave step reward 2.529000000000011
+2026-07-23 06:46:41,206 / INFO: Episode 480, Ave step reward 2.6460000000000092
+2026-07-23 06:46:41,250 / INFO: Episode 430, Ave step reward 2.772000000000006
+2026-07-23 06:46:43,158 / INFO: Episode 430, Ave step reward 2.6460000000000092
+2026-07-23 06:46:48,572 / INFO: Episode 480, Ave step reward 2.61900000000001
+2026-07-23 06:46:51,245 / INFO: Episode 440, Ave step reward 2.979000000000001
+2026-07-23 06:46:54,606 / INFO: Episode 430, Ave step reward 2.529000000000011
+2026-07-23 06:46:55,580 / INFO: Episode 430, Ave step reward 2.5920000000000107
+2026-07-23 06:46:59,219 / INFO: Episode 430, Ave step reward 2.502000000000011
+2026-07-23 06:47:00,273 / INFO: Episode 480, Ave step reward 2.5470000000000113
+2026-07-23 06:47:00,661 / INFO: Episode 500, Ave step reward 2.655000000000009
+2026-07-23 06:47:02,353 / INFO: Episode 440, Ave step reward 2.466000000000011
+2026-07-23 06:47:02,936 / INFO: Episode 490, Ave step reward 2.529000000000011
+2026-07-23 06:47:05,235 / INFO: Episode 440, Ave step reward 2.664000000000009
+2026-07-23 06:47:06,705 / INFO: Episode 440, Ave step reward 2.583000000000011
+2026-07-23 06:47:08,459 / INFO: Episode 440, Ave step reward 2.5920000000000107
+2026-07-23 06:47:10,908 / INFO: Episode 490, Ave step reward 2.5920000000000107
+2026-07-23 06:47:13,168 / INFO: Episode 450, Ave step reward 3.0509999999999993
+2026-07-23 06:47:19,952 / INFO: Episode 440, Ave step reward 2.61900000000001
+2026-07-23 06:47:20,404 / INFO: Episode 440, Ave step reward 2.4750000000000107
+2026-07-23 06:47:21,925 / INFO: Episode 490, Ave step reward 2.62800000000001
+2026-07-23 06:47:23,160 / INFO: Episode 440, Ave step reward 2.493000000000011
+2026-07-23 06:47:23,955 / INFO: Episode 500, Ave step reward 2.583000000000011
+2026-07-23 06:47:24,999 / INFO: Episode 450, Ave step reward 2.520000000000011
+2026-07-23 06:47:28,719 / INFO: Episode 450, Ave step reward 2.7270000000000074
+2026-07-23 06:47:29,425 / INFO: Episode 450, Ave step reward 2.7450000000000068
+2026-07-23 06:47:30,784 / INFO: Episode 450, Ave step reward 2.5650000000000115
+2026-07-23 06:47:31,582 / INFO: Episode 500, Ave step reward 2.7090000000000076
+2026-07-23 06:47:35,326 / INFO: Episode 460, Ave step reward 3.086999999999998
+2026-07-23 06:47:43,828 / INFO: Episode 500, Ave step reward 2.5380000000000114
+2026-07-23 06:47:43,873 / INFO: Episode 450, Ave step reward 2.6370000000000093
+2026-07-23 06:47:44,365 / INFO: Episode 450, Ave step reward 2.5470000000000113
+2026-07-23 06:47:48,382 / INFO: Episode 450, Ave step reward 2.4210000000000105
+2026-07-23 06:47:49,497 / INFO: Episode 460, Ave step reward 2.7180000000000075
+2026-07-23 06:47:53,166 / INFO: Episode 460, Ave step reward 2.7180000000000075
+2026-07-23 06:47:53,956 / INFO: Episode 460, Ave step reward 2.7180000000000075
+2026-07-23 06:47:55,573 / INFO: Episode 460, Ave step reward 2.7090000000000076
+2026-07-23 06:47:59,187 / INFO: Episode 470, Ave step reward 2.9160000000000026
+2026-07-23 06:48:07,789 / INFO: Episode 460, Ave step reward 2.6460000000000092
+2026-07-23 06:48:08,821 / INFO: Episode 460, Ave step reward 2.5920000000000107
+2026-07-23 06:48:13,135 / INFO: Episode 470, Ave step reward 2.5470000000000113
+2026-07-23 06:48:13,673 / INFO: Episode 460, Ave step reward 2.4300000000000104
+2026-07-23 06:48:18,016 / INFO: Episode 470, Ave step reward 2.700000000000008
+2026-07-23 06:48:19,051 / INFO: Episode 470, Ave step reward 2.520000000000011
+2026-07-23 06:48:20,248 / INFO: Episode 470, Ave step reward 2.700000000000008
+2026-07-23 06:48:22,547 / INFO: Episode 480, Ave step reward 3.0239999999999996
+2026-07-23 06:48:33,418 / INFO: Episode 470, Ave step reward 2.664000000000009
+2026-07-23 06:48:34,738 / INFO: Episode 470, Ave step reward 2.7540000000000067
+2026-07-23 06:48:39,497 / INFO: Episode 480, Ave step reward 2.7180000000000075
+2026-07-23 06:48:40,266 / INFO: Episode 470, Ave step reward 2.32200000000001
+2026-07-23 06:48:45,143 / INFO: Episode 480, Ave step reward 2.556000000000011
+2026-07-23 06:48:47,098 / INFO: Episode 480, Ave step reward 2.772000000000006
+2026-07-23 06:48:48,048 / INFO: Episode 480, Ave step reward 2.574000000000011
+2026-07-23 06:48:49,710 / INFO: Episode 490, Ave step reward 2.9520000000000017
+2026-07-23 06:49:02,436 / INFO: Episode 480, Ave step reward 2.7180000000000075
+2026-07-23 06:49:03,989 / INFO: Episode 480, Ave step reward 2.7180000000000075
+2026-07-23 06:49:07,832 / INFO: Episode 490, Ave step reward 2.502000000000011
+2026-07-23 06:49:09,749 / INFO: Episode 480, Ave step reward 2.502000000000011
+2026-07-23 06:49:13,398 / INFO: Episode 490, Ave step reward 2.574000000000011
+2026-07-23 06:49:14,629 / INFO: Episode 490, Ave step reward 2.7450000000000068
+2026-07-23 06:49:15,739 / INFO: Episode 490, Ave step reward 2.700000000000008
+2026-07-23 06:49:15,851 / INFO: Episode 500, Ave step reward 3.0060000000000002
+2026-07-23 06:49:27,829 / INFO: Episode 490, Ave step reward 2.574000000000011
+2026-07-23 06:49:30,297 / INFO: Episode 490, Ave step reward 2.583000000000011
+2026-07-23 06:49:34,464 / INFO: Episode 500, Ave step reward 2.4210000000000105
+2026-07-23 06:49:35,745 / INFO: Episode 490, Ave step reward 2.4300000000000104
+2026-07-23 06:49:39,792 / INFO: Episode 500, Ave step reward 2.62800000000001
+2026-07-23 06:49:41,197 / INFO: Episode 500, Ave step reward 2.664000000000009
+2026-07-23 06:49:42,281 / INFO: Episode 500, Ave step reward 2.7180000000000075
+2026-07-23 06:49:52,775 / INFO: Episode 500, Ave step reward 2.808000000000005
+2026-07-23 06:49:54,926 / INFO: Episode 500, Ave step reward 2.574000000000011
+2026-07-23 06:50:00,862 / INFO: Episode 500, Ave step reward 2.502000000000011
+2026-07-23 06:51:56,514 / INFO: RL utililty: 53.835699428400844
+2026-07-23 06:51:56,534 / INFO: exper_index 10 final utility -53.835699428400844
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-12-0/ddpg.ckpt
+2026-07-23 06:51:59,025 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-12-0/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-12-1/ddpg.ckpt
+2026-07-23 06:52:02,165 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-12-1/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-12-2/ddpg.ckpt
+2026-07-23 06:52:03,111 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-12-2/ddpg.ckpt
+2026-07-23 06:52:26,346 / INFO: Episode 30, Ave step reward 1.8450000000000069
+2026-07-23 06:52:38,169 / INFO: RL utililty: 50.42109136649787
+2026-07-23 06:52:38,186 / INFO: exper_index 11 final utility -50.42109136649787
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-13-0/ddpg.ckpt
+2026-07-23 06:52:40,261 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-13-0/ddpg.ckpt
+2026-07-23 06:52:42,963 / INFO: RL utililty: 50.10279438388961
+2026-07-23 06:52:42,974 / INFO: exper_index 3 final utility -50.10279438388961
+2026-07-23 06:52:44,759 / INFO: Episode 40, Ave step reward 1.890000000000007
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-14-0/ddpg.ckpt
+2026-07-23 06:52:45,157 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-14-0/ddpg.ckpt
+2026-07-23 06:52:59,489 / INFO: RL utililty: 48.468790469029116
+2026-07-23 06:52:59,499 / INFO: exper_index 7 final utility -48.468790469029116
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-15-0/ddpg.ckpt
+2026-07-23 06:53:01,399 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-15-0/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-15-1/ddpg.ckpt
+2026-07-23 06:53:04,929 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-15-1/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-15-2/ddpg.ckpt
+2026-07-23 06:53:06,022 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-15-2/ddpg.ckpt
+2026-07-23 06:53:06,294 / INFO: Episode 50, Ave step reward 1.6200000000000054
+2026-07-23 06:53:07,711 / INFO: Episode 30, Ave step reward 2.3310000000000097
+2026-07-23 06:53:09,809 / INFO: Episode 30, Ave step reward 2.2770000000000095
+2026-07-23 06:53:25,480 / INFO: Episode 40, Ave step reward 2.142000000000009
+2026-07-23 06:53:26,292 / INFO: Episode 60, Ave step reward 1.5390000000000048
+2026-07-23 06:53:29,701 / INFO: Episode 40, Ave step reward 2.223000000000009
+2026-07-23 06:53:31,934 / INFO: Episode 30, Ave step reward 2.2140000000000093
+2026-07-23 06:53:42,644 / INFO: Episode 50, Ave step reward 2.4210000000000105
+2026-07-23 06:53:44,683 / INFO: Episode 70, Ave step reward 1.4400000000000042
+2026-07-23 06:53:48,747 / INFO: Episode 50, Ave step reward 2.187000000000009
+2026-07-23 06:53:50,941 / INFO: Episode 40, Ave step reward 2.223000000000009
+2026-07-23 06:54:00,522 / INFO: Episode 60, Ave step reward 2.0970000000000084
+2026-07-23 06:54:04,654 / INFO: Episode 80, Ave step reward 1.3230000000000035
+2026-07-23 06:54:08,857 / INFO: Episode 60, Ave step reward 2.3850000000000104
+2026-07-23 06:54:11,299 / INFO: Episode 50, Ave step reward 2.4480000000000106
+2026-07-23 06:54:19,436 / INFO: Episode 70, Ave step reward 2.34900000000001
+2026-07-23 06:54:24,968 / INFO: Episode 90, Ave step reward 1.1070000000000022
+2026-07-23 06:54:29,771 / INFO: Episode 70, Ave step reward 2.32200000000001
+2026-07-23 06:54:32,098 / INFO: Episode 60, Ave step reward 2.2680000000000096
+2026-07-23 06:54:38,110 / INFO: Episode 80, Ave step reward 2.35800000000001
+2026-07-23 06:54:44,338 / INFO: Episode 100, Ave step reward 0.9720000000000013
+2026-07-23 06:54:51,257 / INFO: Episode 80, Ave step reward 2.2770000000000095
+2026-07-23 06:54:52,452 / INFO: Episode 70, Ave step reward 2.4030000000000102
+2026-07-23 06:54:55,564 / INFO: RL utililty: 58.049385569245445
+2026-07-23 06:54:55,573 / INFO: exper_index 6 final utility -58.049385569245445
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-16-0/ddpg.ckpt
+2026-07-23 06:54:57,418 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-16-0/ddpg.ckpt
+2026-07-23 06:54:57,516 / INFO: Episode 90, Ave step reward 2.31300000000001
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-16-1/ddpg.ckpt
+2026-07-23 06:54:58,511 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-16-1/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-16-2/ddpg.ckpt
+2026-07-23 06:55:02,445 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-16-2/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-16-3/ddpg.ckpt
+2026-07-23 06:55:03,497 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-16-3/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-16-4/ddpg.ckpt
+2026-07-23 06:55:04,773 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-16-4/ddpg.ckpt
+2026-07-23 06:55:05,781 / INFO: Episode 110, Ave step reward 1.0260000000000016
+2026-07-23 06:55:12,714 / INFO: Episode 90, Ave step reward 2.2590000000000092
+2026-07-23 06:55:14,733 / INFO: Episode 80, Ave step reward 2.4390000000000107
+2026-07-23 06:55:16,947 / INFO: Episode 100, Ave step reward 2.4480000000000106
+2026-07-23 06:55:25,828 / INFO: Episode 120, Ave step reward 0.8550000000000005
+2026-07-23 06:55:30,110 / INFO: Episode 30, Ave step reward 2.232000000000009
+2026-07-23 06:55:33,495 / INFO: Episode 100, Ave step reward 2.2680000000000096
+2026-07-23 06:55:34,776 / INFO: Episode 110, Ave step reward 2.529000000000011
+2026-07-23 06:55:35,756 / INFO: Episode 90, Ave step reward 2.466000000000011
+2026-07-23 06:55:44,806 / INFO: RL utililty: 50.507710939202816
+2026-07-23 06:55:44,814 / INFO: exper_index 0 final utility -50.507710939202816
+2026-07-23 06:55:45,210 / INFO: Episode 130, Ave step reward 0.774
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-17-0/ddpg.ckpt
+2026-07-23 06:55:46,616 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-17-0/ddpg.ckpt
+2026-07-23 06:55:49,708 / INFO: Episode 40, Ave step reward 2.2140000000000093
+2026-07-23 06:55:52,621 / INFO: RL utililty: 50.86908725292115
+2026-07-23 06:55:52,631 / INFO: exper_index 8 final utility -50.86908725292115
+2026-07-23 06:55:52,911 / INFO: Episode 120, Ave step reward 2.3850000000000104
+2026-07-23 06:55:54,298 / INFO: Episode 110, Ave step reward 2.583000000000011
+2026-07-23 06:55:56,181 / INFO: Episode 100, Ave step reward 2.4300000000000104
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-18-0/ddpg.ckpt
+2026-07-23 06:55:56,831 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-18-0/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-18-1/ddpg.ckpt
+2026-07-23 06:55:57,852 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-18-1/ddpg.ckpt
+2026-07-23 06:56:00,000 / INFO: RL utililty: 50.494339686769315
+2026-07-23 06:56:00,018 / INFO: exper_index 4 final utility -50.494339686769315
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-19-0/ddpg.ckpt
+2026-07-23 06:56:01,781 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-19-0/ddpg.ckpt
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-19-1/ddpg.ckpt
+2026-07-23 06:56:04,852 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-19-1/ddpg.ckpt
+2026-07-23 06:56:05,046 / INFO: RL utililty: 50.72969730467424
+2026-07-23 06:56:05,054 / INFO: exper_index 1 final utility -50.72969730467424
+2026-07-23 06:56:05,515 / INFO: Episode 140, Ave step reward 0.8100000000000003
+2026-07-23 06:56:05,534 / INFO: Episode 30, Ave step reward 2.2770000000000095
+INFO:tensorflow:Restoring parameters from ../model/converge/snort_1000_125_do/defender-19-2/ddpg.ckpt
+2026-07-23 06:56:05,951 / INFO: Restoring parameters from ../model/converge/snort_1000_125_do/defender-19-2/ddpg.ckpt
+2026-07-23 06:56:10,082 / INFO: Episode 50, Ave step reward 2.2950000000000097
+2026-07-23 06:56:10,290 / INFO: RL utililty: 50.26932214581349
+2026-07-23 06:56:10,298 / INFO: exper_index 5 final utility -50.26932214581349
+2026-07-23 06:56:12,136 / INFO: Episode 130, Ave step reward 2.5110000000000112
+2026-07-23 06:56:15,717 / INFO: Episode 120, Ave step reward 2.502000000000011
+2026-07-23 06:56:17,938 / INFO: Episode 110, Ave step reward 2.36700000000001
+2026-07-23 06:56:20,200 / INFO: RL utililty: 50.126995616424175
+2026-07-23 06:56:20,211 / INFO: exper_index 2 final utility -50.126995616424175
+2026-07-23 06:56:22,875 / INFO: Episode 30, Ave step reward 2.142000000000009
+2026-07-23 06:56:23,046 / INFO: Episode 40, Ave step reward 2.196000000000009
+2026-07-23 06:56:24,106 / INFO: RL utililty: 47.47198996287266
+2026-07-23 06:56:24,112 / INFO: exper_index 9 final utility -47.47198996287266
+2026-07-23 06:56:26,198 / INFO: Episode 150, Ave step reward 0.7109999999999996
+2026-07-23 06:56:30,459 / INFO: Episode 30, Ave step reward 2.223000000000009
+2026-07-23 06:56:30,520 / INFO: Episode 60, Ave step reward 2.3850000000000104
+2026-07-23 06:56:30,886 / INFO: Episode 140, Ave step reward 2.62800000000001
+2026-07-23 06:56:37,343 / INFO: Episode 130, Ave step reward 2.32200000000001
+2026-07-23 06:56:39,318 / INFO: Episode 120, Ave step reward 2.37600000000001
+2026-07-23 06:56:39,913 / INFO: Episode 50, Ave step reward 2.34900000000001
+2026-07-23 06:56:42,376 / INFO: Episode 40, Ave step reward 2.28600000000001
+2026-07-23 06:56:46,861 / INFO: Episode 160, Ave step reward 0.5309999999999995
+2026-07-23 06:56:49,166 / INFO: Episode 150, Ave step reward 2.5470000000000113
+2026-07-23 06:56:49,850 / INFO: Episode 40, Ave step reward 2.2770000000000095
+2026-07-23 06:56:50,591 / INFO: Episode 70, Ave step reward 2.4210000000000105
+2026-07-23 06:56:57,031 / INFO: Episode 60, Ave step reward 2.1240000000000085
+2026-07-23 06:56:58,673 / INFO: Episode 140, Ave step reward 2.4570000000000105
+2026-07-23 06:57:00,624 / INFO: Episode 130, Ave step reward 2.6730000000000085
+2026-07-23 06:57:02,240 / INFO: Episode 50, Ave step reward 2.2680000000000096
+2026-07-23 06:57:07,607 / INFO: Episode 170, Ave step reward 0.6029999999999993
+2026-07-23 06:57:07,908 / INFO: Episode 160, Ave step reward 2.61900000000001
+2026-07-23 06:57:09,726 / INFO: Episode 50, Ave step reward 2.5110000000000112
+2026-07-23 06:57:11,386 / INFO: Episode 80, Ave step reward 2.160000000000009
+2026-07-23 06:57:14,458 / INFO: Episode 70, Ave step reward 2.232000000000009
+2026-07-23 06:57:20,103 / INFO: Episode 150, Ave step reward 2.574000000000011
+2026-07-23 06:57:21,916 / INFO: Episode 140, Ave step reward 2.4390000000000107
+2026-07-23 06:57:22,020 / INFO: Episode 60, Ave step reward 2.3310000000000097
+2026-07-23 06:57:26,379 / INFO: Episode 170, Ave step reward 2.4480000000000106
+2026-07-23 06:57:28,165 / INFO: Episode 180, Ave step reward 0.41399999999999965
+2026-07-23 06:57:29,244 / INFO: Episode 60, Ave step reward 2.466000000000011
+2026-07-23 06:57:31,585 / INFO: Episode 90, Ave step reward 2.36700000000001
+2026-07-23 06:57:31,692 / INFO: Episode 80, Ave step reward 2.5380000000000114
+2026-07-23 06:57:41,202 / INFO: Episode 160, Ave step reward 2.34900000000001
+2026-07-23 06:57:41,627 / INFO: Episode 70, Ave step reward 2.2680000000000096
+2026-07-23 06:57:42,870 / INFO: Episode 150, Ave step reward 2.556000000000011
+2026-07-23 06:57:44,731 / INFO: Episode 180, Ave step reward 2.5110000000000112
+2026-07-23 06:57:48,636 / INFO: Episode 190, Ave step reward 0.4229999999999996
+2026-07-23 06:57:49,027 / INFO: Episode 90, Ave step reward 2.3940000000000103
+2026-07-23 06:57:49,059 / INFO: Episode 70, Ave step reward 2.466000000000011
+2026-07-23 06:57:52,064 / INFO: Episode 100, Ave step reward 2.493000000000011
+2026-07-23 06:58:02,188 / INFO: Episode 80, Ave step reward 2.4300000000000104
+2026-07-23 06:58:03,043 / INFO: Episode 170, Ave step reward 2.4120000000000106
+2026-07-23 06:58:03,565 / INFO: Episode 190, Ave step reward 2.493000000000011
+2026-07-23 06:58:04,483 / INFO: Episode 160, Ave step reward 2.36700000000001
+2026-07-23 06:58:06,801 / INFO: Episode 100, Ave step reward 2.3040000000000096
+2026-07-23 06:58:09,382 / INFO: Episode 80, Ave step reward 2.529000000000011
+2026-07-23 06:58:09,568 / INFO: Episode 200, Ave step reward 0.37799999999999967
+2026-07-23 06:58:13,201 / INFO: Episode 110, Ave step reward 2.4750000000000107
+2026-07-23 06:58:22,186 / INFO: Episode 200, Ave step reward 2.583000000000011
+2026-07-23 06:58:22,595 / INFO: Episode 90, Ave step reward 2.4210000000000105
+2026-07-23 06:58:24,591 / INFO: Episode 110, Ave step reward 2.3850000000000104
+2026-07-23 06:58:24,746 / INFO: Episode 180, Ave step reward 2.502000000000011
+2026-07-23 06:58:25,986 / INFO: Episode 170, Ave step reward 2.556000000000011
+2026-07-23 06:58:29,061 / INFO: Episode 90, Ave step reward 2.5380000000000114
+2026-07-23 06:58:30,096 / INFO: Episode 210, Ave step reward 0.44999999999999957
+2026-07-23 06:58:33,915 / INFO: Episode 120, Ave step reward 2.4210000000000105
+2026-07-23 06:58:40,848 / INFO: Episode 210, Ave step reward 2.6460000000000092
+2026-07-23 06:58:42,457 / INFO: Episode 120, Ave step reward 2.4840000000000106
+2026-07-23 06:58:42,933 / INFO: Episode 100, Ave step reward 2.3940000000000103
+2026-07-23 06:58:46,518 / INFO: Episode 190, Ave step reward 2.466000000000011
+2026-07-23 06:58:47,653 / INFO: Episode 180, Ave step reward 2.5470000000000113
+2026-07-23 06:58:49,259 / INFO: Episode 100, Ave step reward 2.5650000000000115
+2026-07-23 06:58:51,003 / INFO: Episode 220, Ave step reward 0.33299999999999974
+2026-07-23 06:58:54,944 / INFO: Episode 130, Ave step reward 2.37600000000001
+2026-07-23 06:58:59,667 / INFO: Episode 220, Ave step reward 2.6370000000000093
+2026-07-23 06:59:00,507 / INFO: Episode 130, Ave step reward 2.4210000000000105
+2026-07-23 06:59:03,322 / INFO: Episode 110, Ave step reward 2.28600000000001
+2026-07-23 06:59:07,817 / INFO: Episode 200, Ave step reward 2.4300000000000104
+2026-07-23 06:59:08,855 / INFO: Episode 190, Ave step reward 2.4300000000000104
+2026-07-23 06:59:09,240 / INFO: Episode 110, Ave step reward 2.772000000000006
+2026-07-23 06:59:11,235 / INFO: Episode 230, Ave step reward 0.2879999999999998
+2026-07-23 06:59:15,656 / INFO: Episode 140, Ave step reward 2.4840000000000106
+2026-07-23 06:59:18,090 / INFO: Episode 230, Ave step reward 2.655000000000009
+2026-07-23 06:59:18,275 / INFO: Episode 140, Ave step reward 2.5650000000000115
+2026-07-23 06:59:23,652 / INFO: Episode 120, Ave step reward 2.4030000000000102
+2026-07-23 06:59:29,183 / INFO: Episode 120, Ave step reward 2.655000000000009
+2026-07-23 06:59:29,369 / INFO: Episode 210, Ave step reward 2.6010000000000106
+2026-07-23 06:59:30,206 / INFO: Episode 200, Ave step reward 2.574000000000011
+2026-07-23 06:59:31,943 / INFO: Episode 240, Ave step reward 0.27899999999999986
+2026-07-23 06:59:36,239 / INFO: Episode 150, Ave step reward 2.583000000000011
+2026-07-23 06:59:36,499 / INFO: Episode 150, Ave step reward 2.4210000000000105
+2026-07-23 06:59:36,711 / INFO: Episode 240, Ave step reward 2.583000000000011
+2026-07-23 06:59:44,215 / INFO: Episode 130, Ave step reward 2.466000000000011
+2026-07-23 06:59:49,547 / INFO: Episode 130, Ave step reward 2.61900000000001
+2026-07-23 06:59:51,022 / INFO: Episode 220, Ave step reward 2.502000000000011
+2026-07-23 06:59:51,749 / INFO: Episode 210, Ave step reward 2.664000000000009
+2026-07-23 06:59:52,557 / INFO: Episode 250, Ave step reward 0.2429999999999999
+2026-07-23 06:59:54,391 / INFO: Episode 160, Ave step reward 2.5920000000000107
+2026-07-23 06:59:55,613 / INFO: Episode 250, Ave step reward 2.5920000000000107
+2026-07-23 06:59:57,806 / INFO: Episode 160, Ave step reward 2.574000000000011
+2026-07-23 07:00:05,082 / INFO: Episode 140, Ave step reward 2.4840000000000106
+2026-07-23 07:00:09,767 / INFO: Episode 140, Ave step reward 2.736000000000007
+2026-07-23 07:00:12,515 / INFO: Episode 170, Ave step reward 2.583000000000011
+2026-07-23 07:00:12,598 / INFO: Episode 230, Ave step reward 2.4480000000000106
+2026-07-23 07:00:13,112 / INFO: Episode 260, Ave step reward 0.08100000000000002
+2026-07-23 07:00:13,191 / INFO: Episode 220, Ave step reward 2.6370000000000093
+2026-07-23 07:00:14,332 / INFO: Episode 260, Ave step reward 2.5380000000000114
+2026-07-23 07:00:18,874 / INFO: Episode 170, Ave step reward 2.5470000000000113
+2026-07-23 07:00:25,703 / INFO: Episode 150, Ave step reward 2.61900000000001
+2026-07-23 07:00:30,048 / INFO: Episode 150, Ave step reward 2.781000000000006
+2026-07-23 07:00:30,796 / INFO: Episode 180, Ave step reward 2.493000000000011
+2026-07-23 07:00:33,220 / INFO: Episode 270, Ave step reward 2.700000000000008
+2026-07-23 07:00:33,849 / INFO: Episode 270, Ave step reward 0.18
+2026-07-23 07:00:34,440 / INFO: Episode 240, Ave step reward 2.35800000000001
+2026-07-23 07:00:34,855 / INFO: Episode 230, Ave step reward 2.4840000000000106
+2026-07-23 07:00:40,269 / INFO: Episode 180, Ave step reward 2.4390000000000107
+2026-07-23 07:00:46,695 / INFO: Episode 160, Ave step reward 2.4750000000000107
+2026-07-23 07:00:49,355 / INFO: Episode 190, Ave step reward 2.6010000000000106
+2026-07-23 07:00:50,747 / INFO: Episode 160, Ave step reward 2.8620000000000037
+2026-07-23 07:00:51,995 / INFO: Episode 280, Ave step reward 2.4750000000000107
+2026-07-23 07:00:54,443 / INFO: Episode 280, Ave step reward 0.15300000000000005
+2026-07-23 07:00:56,250 / INFO: Episode 250, Ave step reward 2.7990000000000053
+2026-07-23 07:00:56,445 / INFO: Episode 240, Ave step reward 2.62800000000001
+2026-07-23 07:01:01,275 / INFO: Episode 190, Ave step reward 2.502000000000011
+2026-07-23 07:01:07,273 / INFO: Episode 170, Ave step reward 2.6910000000000083
+2026-07-23 07:01:07,525 / INFO: Episode 200, Ave step reward 2.61000000000001
+2026-07-23 07:01:10,382 / INFO: Episode 290, Ave step reward 2.529000000000011
+2026-07-23 07:01:10,738 / INFO: Episode 170, Ave step reward 2.943000000000002
+2026-07-23 07:01:14,790 / INFO: Episode 290, Ave step reward 0.18899999999999997
+2026-07-23 07:01:17,637 / INFO: Episode 260, Ave step reward 2.5110000000000112
+2026-07-23 07:01:17,666 / INFO: Episode 250, Ave step reward 2.529000000000011
+2026-07-23 07:01:22,397 / INFO: Episode 200, Ave step reward 2.62800000000001
+2026-07-23 07:01:25,720 / INFO: Episode 210, Ave step reward 2.574000000000011
+2026-07-23 07:01:27,995 / INFO: Episode 180, Ave step reward 2.61900000000001
+2026-07-23 07:01:29,100 / INFO: Episode 300, Ave step reward 2.6910000000000083
+2026-07-23 07:01:31,255 / INFO: Episode 180, Ave step reward 2.9250000000000025
+2026-07-23 07:01:35,619 / INFO: Episode 300, Ave step reward 0.09000000000000002
+2026-07-23 07:01:39,543 / INFO: Episode 260, Ave step reward 2.583000000000011
+2026-07-23 07:01:39,727 / INFO: Episode 270, Ave step reward 2.4390000000000107
+2026-07-23 07:01:44,118 / INFO: Episode 210, Ave step reward 2.583000000000011
+2026-07-23 07:01:44,596 / INFO: Episode 220, Ave step reward 2.655000000000009
+2026-07-23 07:01:48,130 / INFO: Episode 310, Ave step reward 2.61000000000001
+2026-07-23 07:01:49,267 / INFO: Episode 190, Ave step reward 2.5470000000000113
+2026-07-23 07:01:51,589 / INFO: Episode 190, Ave step reward 2.979000000000001
+2026-07-23 07:01:56,074 / INFO: Episode 310, Ave step reward 0.10800000000000003
+2026-07-23 07:02:01,069 / INFO: Episode 270, Ave step reward 2.574000000000011
+2026-07-23 07:02:01,282 / INFO: Episode 280, Ave step reward 2.4300000000000104
+2026-07-23 07:02:03,036 / INFO: Episode 230, Ave step reward 2.493000000000011
+2026-07-23 07:02:05,308 / INFO: Episode 220, Ave step reward 2.4030000000000102
+2026-07-23 07:02:06,958 / INFO: Episode 320, Ave step reward 2.736000000000007
+2026-07-23 07:02:10,257 / INFO: Episode 200, Ave step reward 2.6730000000000085
+2026-07-23 07:02:11,914 / INFO: Episode 200, Ave step reward 2.9250000000000025
+2026-07-23 07:02:16,707 / INFO: Episode 320, Ave step reward 0.14400000000000004
+2026-07-23 07:02:21,401 / INFO: Episode 240, Ave step reward 2.5470000000000113
+2026-07-23 07:02:22,634 / INFO: Episode 280, Ave step reward 2.556000000000011
+2026-07-23 07:02:22,827 / INFO: Episode 290, Ave step reward 2.3940000000000103
+2026-07-23 07:02:25,660 / INFO: Episode 330, Ave step reward 2.6010000000000106
+2026-07-23 07:02:26,462 / INFO: Episode 230, Ave step reward 2.7090000000000076
+2026-07-23 07:02:31,653 / INFO: Episode 210, Ave step reward 2.61900000000001
+2026-07-23 07:02:33,023 / INFO: Episode 210, Ave step reward 2.970000000000001
+2026-07-23 07:02:38,220 / INFO: Episode 330, Ave step reward 0.10800000000000003
+2026-07-23 07:02:41,000 / INFO: Episode 250, Ave step reward 2.6010000000000106
+2026-07-23 07:02:45,325 / INFO: Episode 290, Ave step reward 2.62800000000001
+2026-07-23 07:02:45,498 / INFO: Episode 340, Ave step reward 2.5380000000000114
+2026-07-23 07:02:45,669 / INFO: Episode 300, Ave step reward 2.5110000000000112
+2026-07-23 07:02:49,070 / INFO: Episode 240, Ave step reward 2.556000000000011
+2026-07-23 07:02:53,075 / INFO: Episode 220, Ave step reward 2.6370000000000093
+2026-07-23 07:02:53,659 / INFO: Episode 220, Ave step reward 2.988000000000001
+2026-07-23 07:02:58,977 / INFO: Episode 340, Ave step reward 0.11700000000000003
+2026-07-23 07:02:59,691 / INFO: Episode 260, Ave step reward 2.5650000000000115
+2026-07-23 07:03:04,803 / INFO: Episode 350, Ave step reward 2.6370000000000093
+2026-07-23 07:03:07,395 / INFO: Episode 300, Ave step reward 2.556000000000011
+2026-07-23 07:03:07,778 / INFO: Episode 310, Ave step reward 2.583000000000011
+2026-07-23 07:03:10,765 / INFO: Episode 250, Ave step reward 2.5650000000000115
+2026-07-23 07:03:14,379 / INFO: Episode 230, Ave step reward 2.5650000000000115
+2026-07-23 07:03:14,486 / INFO: Episode 230, Ave step reward 2.898000000000003
+2026-07-23 07:03:18,278 / INFO: Episode 270, Ave step reward 2.61000000000001
+2026-07-23 07:03:19,743 / INFO: Episode 350, Ave step reward 0.11700000000000003
+2026-07-23 07:03:23,414 / INFO: Episode 360, Ave step reward 2.7450000000000068
+2026-07-23 07:03:28,712 / INFO: Episode 310, Ave step reward 2.7090000000000076
+2026-07-23 07:03:29,242 / INFO: Episode 320, Ave step reward 2.6010000000000106
+2026-07-23 07:03:31,931 / INFO: Episode 260, Ave step reward 2.6370000000000093
+2026-07-23 07:03:34,849 / INFO: Episode 240, Ave step reward 2.943000000000002
+2026-07-23 07:03:35,312 / INFO: Episode 240, Ave step reward 2.6460000000000092
+2026-07-23 07:03:36,559 / INFO: Episode 280, Ave step reward 2.556000000000011
+2026-07-23 07:03:40,034 / INFO: Episode 360, Ave step reward 0.07200000000000001
+2026-07-23 07:03:42,115 / INFO: Episode 370, Ave step reward 2.7450000000000068
+2026-07-23 07:03:50,071 / INFO: Episode 320, Ave step reward 2.6820000000000084
+2026-07-23 07:03:50,862 / INFO: Episode 330, Ave step reward 2.5470000000000113
+2026-07-23 07:03:53,096 / INFO: Episode 270, Ave step reward 2.7090000000000076
+2026-07-23 07:03:54,859 / INFO: Episode 290, Ave step reward 2.529000000000011
+2026-07-23 07:03:55,279 / INFO: Episode 250, Ave step reward 2.988000000000001
+2026-07-23 07:03:56,134 / INFO: Episode 250, Ave step reward 2.5920000000000107
+2026-07-23 07:04:00,285 / INFO: Episode 370, Ave step reward 0.08100000000000002
+2026-07-23 07:04:00,562 / INFO: Episode 380, Ave step reward 2.6730000000000085
+2026-07-23 07:04:11,963 / INFO: Episode 330, Ave step reward 2.6730000000000085
+2026-07-23 07:04:12,993 / INFO: Episode 340, Ave step reward 2.5110000000000112
+2026-07-23 07:04:13,609 / INFO: Episode 300, Ave step reward 2.7540000000000067
+2026-07-23 07:04:14,876 / INFO: Episode 280, Ave step reward 2.7270000000000074
+2026-07-23 07:04:16,024 / INFO: Episode 260, Ave step reward 2.898000000000003
+2026-07-23 07:04:17,450 / INFO: Episode 260, Ave step reward 2.529000000000011
+2026-07-23 07:04:19,663 / INFO: Episode 390, Ave step reward 2.7270000000000074
+2026-07-23 07:04:21,137 / INFO: Episode 380, Ave step reward 0.11700000000000003
+2026-07-23 07:04:32,276 / INFO: Episode 310, Ave step reward 2.61900000000001
+2026-07-23 07:04:33,664 / INFO: Episode 340, Ave step reward 2.583000000000011
+2026-07-23 07:04:34,831 / INFO: Episode 350, Ave step reward 2.4840000000000106
+2026-07-23 07:04:36,444 / INFO: Episode 290, Ave step reward 2.529000000000011
+2026-07-23 07:04:36,540 / INFO: Episode 270, Ave step reward 3.0060000000000002
+2026-07-23 07:04:38,510 / INFO: Episode 400, Ave step reward 2.4480000000000106
+2026-07-23 07:04:38,710 / INFO: Episode 270, Ave step reward 2.664000000000009
+2026-07-23 07:04:41,934 / INFO: Episode 390, Ave step reward 0.08100000000000002
+2026-07-23 07:04:50,902 / INFO: Episode 320, Ave step reward 2.5920000000000107
+2026-07-23 07:04:55,607 / INFO: Episode 350, Ave step reward 2.6730000000000085
+2026-07-23 07:04:56,858 / INFO: Episode 360, Ave step reward 2.466000000000011
+2026-07-23 07:04:57,184 / INFO: Episode 280, Ave step reward 2.988000000000001
+2026-07-23 07:04:57,527 / INFO: Episode 410, Ave step reward 2.5650000000000115
+2026-07-23 07:04:58,080 / INFO: Episode 300, Ave step reward 2.6460000000000092
+2026-07-23 07:05:00,142 / INFO: Episode 280, Ave step reward 2.5920000000000107
+2026-07-23 07:05:02,582 / INFO: Episode 400, Ave step reward 0.054000000000000006
+2026-07-23 07:05:09,552 / INFO: Episode 330, Ave step reward 2.5380000000000114
+2026-07-23 07:05:16,268 / INFO: Episode 420, Ave step reward 2.520000000000011
+2026-07-23 07:05:17,203 / INFO: Episode 360, Ave step reward 2.7180000000000075
+2026-07-23 07:05:17,594 / INFO: Episode 290, Ave step reward 2.943000000000002
+2026-07-23 07:05:18,591 / INFO: Episode 370, Ave step reward 2.4120000000000106
+2026-07-23 07:05:19,447 / INFO: Episode 310, Ave step reward 2.6460000000000092
+2026-07-23 07:05:21,421 / INFO: Episode 290, Ave step reward 2.4840000000000106
+2026-07-23 07:05:23,472 / INFO: Episode 410, Ave step reward 0.045
+2026-07-23 07:05:28,761 / INFO: Episode 340, Ave step reward 2.574000000000011
+2026-07-23 07:05:35,955 / INFO: Episode 430, Ave step reward 2.502000000000011
+2026-07-23 07:05:38,967 / INFO: Episode 300, Ave step reward 2.9250000000000025
+2026-07-23 07:05:39,683 / INFO: Episode 370, Ave step reward 2.574000000000011
+2026-07-23 07:05:41,135 / INFO: Episode 380, Ave step reward 2.36700000000001
+2026-07-23 07:05:41,683 / INFO: Episode 320, Ave step reward 2.7180000000000075
+2026-07-23 07:05:43,246 / INFO: Episode 300, Ave step reward 2.4840000000000106
+2026-07-23 07:05:44,497 / INFO: Episode 420, Ave step reward 0.018000000000000002
+2026-07-23 07:05:47,593 / INFO: Episode 350, Ave step reward 2.61000000000001
+2026-07-23 07:05:54,984 / INFO: Episode 440, Ave step reward 2.5920000000000107
+2026-07-23 07:05:59,747 / INFO: Episode 310, Ave step reward 3.015
+2026-07-23 07:06:01,656 / INFO: Episode 380, Ave step reward 2.529000000000011
+2026-07-23 07:06:03,172 / INFO: Episode 390, Ave step reward 2.520000000000011
+2026-07-23 07:06:03,423 / INFO: Episode 330, Ave step reward 2.520000000000011
+2026-07-23 07:06:04,809 / INFO: Episode 310, Ave step reward 2.6910000000000083
+2026-07-23 07:06:05,283 / INFO: Episode 430, Ave step reward 0.045
+2026-07-23 07:06:06,435 / INFO: Episode 360, Ave step reward 2.7540000000000067
+2026-07-23 07:06:13,824 / INFO: Episode 450, Ave step reward 2.6370000000000093
+2026-07-23 07:06:20,301 / INFO: Episode 320, Ave step reward 2.9250000000000025
+2026-07-23 07:06:23,390 / INFO: Episode 390, Ave step reward 2.61000000000001
+2026-07-23 07:06:25,060 / INFO: Episode 340, Ave step reward 2.6460000000000092
+2026-07-23 07:06:25,112 / INFO: Episode 400, Ave step reward 2.5110000000000112
+2026-07-23 07:06:25,239 / INFO: Episode 370, Ave step reward 2.529000000000011
+2026-07-23 07:06:25,931 / INFO: Episode 440, Ave step reward 0.027000000000000003
+2026-07-23 07:06:26,175 / INFO: Episode 320, Ave step reward 2.6370000000000093
+2026-07-23 07:06:32,788 / INFO: Episode 460, Ave step reward 2.6010000000000106
+2026-07-23 07:06:41,325 / INFO: Episode 330, Ave step reward 2.961000000000001
+2026-07-23 07:06:44,232 / INFO: Episode 380, Ave step reward 2.7180000000000075
+2026-07-23 07:06:45,559 / INFO: Episode 400, Ave step reward 2.61900000000001
+2026-07-23 07:06:46,830 / INFO: Episode 450, Ave step reward 0.018000000000000002
+2026-07-23 07:06:46,981 / INFO: Episode 350, Ave step reward 2.556000000000011
+2026-07-23 07:06:47,390 / INFO: Episode 410, Ave step reward 2.4840000000000106
+2026-07-23 07:06:47,788 / INFO: Episode 330, Ave step reward 2.5470000000000113
+2026-07-23 07:06:51,936 / INFO: Episode 470, Ave step reward 2.6460000000000092
+2026-07-23 07:07:02,285 / INFO: Episode 340, Ave step reward 3.0509999999999993
+2026-07-23 07:07:03,136 / INFO: Episode 390, Ave step reward 2.664000000000009
+2026-07-23 07:07:07,845 / INFO: Episode 410, Ave step reward 2.61900000000001
+2026-07-23 07:07:07,998 / INFO: Episode 460, Ave step reward 0.027000000000000003
+2026-07-23 07:07:09,486 / INFO: Episode 360, Ave step reward 2.772000000000006
+2026-07-23 07:07:10,048 / INFO: Episode 340, Ave step reward 2.6820000000000084
+2026-07-23 07:07:10,374 / INFO: Episode 420, Ave step reward 2.5470000000000113
+2026-07-23 07:07:11,972 / INFO: Episode 480, Ave step reward 2.574000000000011
+2026-07-23 07:07:23,518 / INFO: Episode 400, Ave step reward 2.6370000000000093
+2026-07-23 07:07:24,690 / INFO: Episode 350, Ave step reward 3.0329999999999995
+2026-07-23 07:07:29,976 / INFO: Episode 470, Ave step reward 0.036000000000000004
+2026-07-23 07:07:30,762 / INFO: Episode 420, Ave step reward 2.6460000000000092
+2026-07-23 07:07:31,259 / INFO: Episode 490, Ave step reward 2.6730000000000085
+2026-07-23 07:07:31,912 / INFO: Episode 370, Ave step reward 2.5470000000000113
+2026-07-23 07:07:32,028 / INFO: Episode 350, Ave step reward 2.5380000000000114
+2026-07-23 07:07:32,732 / INFO: Episode 430, Ave step reward 2.4030000000000102
+2026-07-23 07:07:42,481 / INFO: Episode 410, Ave step reward 2.556000000000011
+2026-07-23 07:07:45,625 / INFO: Episode 360, Ave step reward 2.988000000000001
+2026-07-23 07:07:50,442 / INFO: Episode 500, Ave step reward 2.5380000000000114
+2026-07-23 07:07:50,947 / INFO: Episode 480, Ave step reward 0.045
+2026-07-23 07:07:52,949 / INFO: Episode 430, Ave step reward 2.574000000000011
+2026-07-23 07:07:53,759 / INFO: Episode 360, Ave step reward 2.6820000000000084
+2026-07-23 07:07:54,029 / INFO: Episode 380, Ave step reward 2.556000000000011
+2026-07-23 07:07:55,110 / INFO: Episode 440, Ave step reward 2.493000000000011
+2026-07-23 07:08:01,039 / INFO: Episode 420, Ave step reward 2.5920000000000107
+2026-07-23 07:08:06,137 / INFO: Episode 370, Ave step reward 3.015
+2026-07-23 07:08:11,590 / INFO: Episode 490, Ave step reward 0.09900000000000002
+2026-07-23 07:08:14,922 / INFO: Episode 440, Ave step reward 2.5650000000000115
+2026-07-23 07:08:15,223 / INFO: Episode 370, Ave step reward 2.6730000000000085
+2026-07-23 07:08:15,551 / INFO: Episode 390, Ave step reward 2.466000000000011
+2026-07-23 07:08:17,126 / INFO: Episode 450, Ave step reward 2.529000000000011
+2026-07-23 07:08:20,050 / INFO: Episode 430, Ave step reward 2.6730000000000085
+2026-07-23 07:08:27,404 / INFO: Episode 380, Ave step reward 3.095999999999998
+2026-07-23 07:08:32,863 / INFO: Episode 500, Ave step reward 0.027000000000000003
+2026-07-23 07:08:37,489 / INFO: Episode 380, Ave step reward 2.736000000000007
+2026-07-23 07:08:37,547 / INFO: Episode 450, Ave step reward 2.6370000000000093
+2026-07-23 07:08:37,976 / INFO: Episode 400, Ave step reward 2.5380000000000114
+2026-07-23 07:08:39,603 / INFO: Episode 440, Ave step reward 2.736000000000007
+2026-07-23 07:08:39,884 / INFO: Episode 460, Ave step reward 2.5650000000000115
+2026-07-23 07:08:48,771 / INFO: Episode 390, Ave step reward 3.0599999999999987
+2026-07-23 07:08:58,543 / INFO: Episode 450, Ave step reward 2.61000000000001
+2026-07-23 07:08:59,112 / INFO: Episode 390, Ave step reward 2.61000000000001
+2026-07-23 07:08:59,543 / INFO: Episode 460, Ave step reward 2.5650000000000115
+2026-07-23 07:08:59,798 / INFO: Episode 410, Ave step reward 2.700000000000008
+2026-07-23 07:09:02,073 / INFO: Episode 470, Ave step reward 2.4390000000000107
+2026-07-23 07:09:10,233 / INFO: Episode 400, Ave step reward 3.0060000000000002
+2026-07-23 07:09:17,768 / INFO: Episode 460, Ave step reward 2.7090000000000076
+2026-07-23 07:09:21,040 / INFO: Episode 400, Ave step reward 2.61900000000001
+2026-07-23 07:09:21,758 / INFO: Episode 470, Ave step reward 2.574000000000011
+2026-07-23 07:09:21,979 / INFO: Episode 420, Ave step reward 2.5920000000000107
+2026-07-23 07:09:24,355 / INFO: Episode 480, Ave step reward 2.4480000000000106
+2026-07-23 07:09:30,589 / INFO: Episode 410, Ave step reward 3.0689999999999986
+2026-07-23 07:09:36,145 / INFO: Episode 470, Ave step reward 2.5470000000000113
+2026-07-23 07:09:42,060 / INFO: Episode 410, Ave step reward 2.583000000000011
+2026-07-23 07:09:43,036 / INFO: Episode 480, Ave step reward 2.8620000000000037
+2026-07-23 07:09:43,151 / INFO: Episode 430, Ave step reward 2.7180000000000075
+2026-07-23 07:09:45,843 / INFO: Episode 490, Ave step reward 2.520000000000011
+2026-07-23 07:09:51,007 / INFO: Episode 420, Ave step reward 3.095999999999998
+2026-07-23 07:09:54,521 / INFO: Episode 480, Ave step reward 2.4840000000000106
+2026-07-23 07:10:03,048 / INFO: Episode 420, Ave step reward 2.7270000000000074
+2026-07-23 07:10:04,445 / INFO: Episode 490, Ave step reward 2.62800000000001
+2026-07-23 07:10:04,520 / INFO: Episode 440, Ave step reward 2.583000000000011
+2026-07-23 07:10:07,391 / INFO: Episode 500, Ave step reward 2.4030000000000102
+2026-07-23 07:10:11,509 / INFO: Episode 430, Ave step reward 3.167999999999996
+2026-07-23 07:10:12,991 / INFO: Episode 490, Ave step reward 2.5110000000000112
+2026-07-23 07:10:24,922 / INFO: Episode 430, Ave step reward 2.7630000000000066
+2026-07-23 07:10:26,609 / INFO: Episode 500, Ave step reward 2.520000000000011
+2026-07-23 07:10:26,611 / INFO: Episode 450, Ave step reward 2.5470000000000113
+2026-07-23 07:10:32,335 / INFO: Episode 500, Ave step reward 2.655000000000009
+2026-07-23 07:10:32,790 / INFO: Episode 440, Ave step reward 3.0419999999999994
+2026-07-23 07:10:45,585 / INFO: Episode 440, Ave step reward 2.7450000000000068
+2026-07-23 07:10:47,474 / INFO: Episode 460, Ave step reward 2.529000000000011
+2026-07-23 07:10:52,583 / INFO: Episode 450, Ave step reward 2.9250000000000025
+2026-07-23 07:11:06,080 / INFO: Episode 450, Ave step reward 2.700000000000008
+2026-07-23 07:11:08,017 / INFO: Episode 470, Ave step reward 2.6910000000000083
+2026-07-23 07:11:12,187 / INFO: Episode 460, Ave step reward 3.0419999999999994
+2026-07-23 07:11:26,285 / INFO: Episode 460, Ave step reward 2.7270000000000074
+2026-07-23 07:11:28,645 / INFO: Episode 480, Ave step reward 2.61900000000001
+2026-07-23 07:11:32,108 / INFO: Episode 470, Ave step reward 3.0599999999999987
+2026-07-23 07:11:46,763 / INFO: Episode 470, Ave step reward 2.5380000000000114
+2026-07-23 07:11:49,312 / INFO: Episode 490, Ave step reward 2.7450000000000068
+2026-07-23 07:11:51,649 / INFO: Episode 480, Ave step reward 2.943000000000002
+2026-07-23 07:12:06,979 / INFO: Episode 480, Ave step reward 2.6460000000000092
+2026-07-23 07:12:09,766 / INFO: Episode 500, Ave step reward 2.6910000000000083
+2026-07-23 07:12:11,124 / INFO: Episode 490, Ave step reward 3.176999999999996
+2026-07-23 07:12:26,705 / INFO: Episode 490, Ave step reward 2.7990000000000053
+2026-07-23 07:12:30,128 / INFO: Episode 500, Ave step reward 2.979000000000001
+2026-07-23 07:12:46,350 / INFO: Episode 500, Ave step reward 2.520000000000011
+2026-07-23 07:12:51,389 / INFO: RL utililty: 50.147649937885745
+2026-07-23 07:12:51,391 / INFO: exper_index 14 final utility -50.147649937885745
+2026-07-23 07:14:50,201 / INFO: RL utililty: 2.55132
+2026-07-23 07:14:50,202 / INFO: exper_index 12 final utility -2.55132
+2026-07-23 07:15:06,396 / INFO: RL utililty: 50.30203503233445
+2026-07-23 07:15:06,396 / INFO: exper_index 17 final utility -50.30203503233445
+2026-07-23 07:16:45,233 / INFO: RL utililty: 47.81622112930001
+2026-07-23 07:16:45,234 / INFO: exper_index 13 final utility -47.81622112930001
+2026-07-23 07:16:53,670 / INFO: RL utililty: 50.053449560634135
+2026-07-23 07:16:53,671 / INFO: exper_index 15 final utility -50.053449560634135
+2026-07-23 07:17:44,291 / INFO: RL utililty: 58.2937443493698
+2026-07-23 07:17:44,291 / INFO: exper_index 19 final utility -58.2937443493698
+2026-07-23 07:17:53,058 / INFO: RL utililty: 50.12018597884491
+2026-07-23 07:17:53,059 / INFO: exper_index 16 final utility -50.12018597884491
+2026-07-23 07:18:05,875 / INFO: RL utililty: 50.59096631613263
+2026-07-23 07:18:05,876 / INFO: exper_index 18 final utility -50.59096631613263
+2026-07-23 07:18:05,916 / INFO: The utility of the agent:
+[-50.507710939202816, -50.72969730467424, -50.126995616424175, -50.10279438388961, -50.494339686769315, -50.26932214581349, -58.049385569245445, -48.468790469029116, -50.86908725292115, -47.47198996287266, -53.835699428400844, -50.42109136649787, -2.55132, -47.81622112930001, -50.147649937885745, -50.053449560634135, -50.12018597884491, -50.30203503233445, -50.59096631613263, -58.2937443493698]
+-48.56112382151212
+1
+0
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+1
+0
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+1
+0
+1
+0
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+3
+0
+1
+2
+4
+0
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+1
+2
+3
+1
+0
+1
+0
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+3
+0
+1
+2
+3
+0
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+1
+2
+5
+0
+1
+2
+3
+4
+1
+0
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+3
+0
+1
+2
+3
+0
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+1
+2
+2
+0
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+1
+2
+0
+1
+3
+0
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+1
+2
+1
+0
+3
+0
+
+WARNING: The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+If you depend on functionality not listed there, please file an issue.
+
+1
+2

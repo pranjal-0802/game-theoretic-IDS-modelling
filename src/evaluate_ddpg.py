@@ -268,7 +268,10 @@ class DDPGlearning:
         total_reward = 0
         op_actions = np.random.choice(op_profile, TEST_EPISODES, p=op_strategy)
         f = open('rewards_per_attack.csv', 'a')
-        writer = csv.writer(f)            
+        writer = csv.writer(f)
+        balance_f = open('reward_balance.csv', 'a')
+        balance_writer = csv.writer(balance_f)
+        balance_writer.writerow(['episode', 'step', 'defender_reward', 'attacker_reward', 'sum'])
         for i in range(TEST_EPISODES):
             global_state = initial_state
             state = np.array(state_observe(global_state),dtype=np.float32)
@@ -278,9 +281,16 @@ class DDPGlearning:
                 # Choose the best action by the actor network
                 action = self.ddpg.choose_action(state)
                 #action = np.array(normalized(test_defense_proportion(model, global_state)[0]), dtype=np.float32)
-                
+                prev_U_defender = global_state.U_defender
+                prev_U_attacker = global_state.U_attacker
                 (next_global_state, loss) = state_update(TEST_MODE, global_state, list(action), op_action)
                 next_state = np.array(state_observe(next_global_state), dtype=np.float32)
+
+                def_reward_step = next_global_state.U_defender - prev_U_defender
+                atk_reward_step = next_global_state.U_attacker - prev_U_attacker
+                balance_writer.writerow([i, j, def_reward_step, atk_reward_step,
+                                          def_reward_step + atk_reward_step])
+
                 global_state = next_global_state
 
                 state = next_state
@@ -294,6 +304,7 @@ class DDPGlearning:
             self.utility = ave_reward
             logging.info("RL utililty: {}".format(ave_reward))
         f.close()
+        balance_f.close()
 
     def policy(self, model, state):
         """
@@ -480,6 +491,7 @@ if __name__ == "__main__":
                 attack_profile = [test_attack_snort]
             utility = get_payoff_mixed(actual_model, attack_profile, defense_profile, attack_strategy, defense_strategy)
 
+        logging.info("exper_index {} final utility {}".format(exper_index, utility))
         return utility
 
     cores = multiprocessing.cpu_count()
