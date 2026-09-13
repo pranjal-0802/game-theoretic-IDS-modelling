@@ -360,6 +360,7 @@ class DDPGlearning:
         op_actions = np.random.choice(op_profile, TEST_EPISODES, p=op_strategy)
         f = open('rewards_per_attack.csv', 'w')
         writer = csv.writer(f)
+        writer.writerow(['Episode', 'Defender Reward', 'Attacker Reward', 'Sum'])
         #fm = open('m_per_attack.csv', 'w')
         #writerm = csv.writer(fm)
             
@@ -367,6 +368,7 @@ class DDPGlearning:
             global_state = initial_state
             state = np.array(state_observe(global_state),dtype=np.float32)
             episode_reward = 0.0
+            episode_reward_atk = 0.0
             op_action = op_actions[i]
             for j in range(MAX_TEST_STEPS):
                 # Choose the best action by the actor network
@@ -377,15 +379,18 @@ class DDPGlearning:
                 next_state = np.array(state_observe(next_global_state), dtype=np.float32)
                 #state1 =  state[9:15]
                 #writerm.writerow([state1])
+                def_loss = next_global_state.U_defender - global_state.U_defender
+                atk_gain = next_global_state.U_attacker - global_state.U_attacker
                 global_state = next_global_state
 
                 state = next_state
                 step_reward = -1.0*loss
 
                 episode_reward += GAMMA**j*step_reward
+                episode_reward_atk += GAMMA**j*atk_gain
             #logging.info("Episode {}, Average reward in each step {}".format(i, episode_reward))
             total_reward += episode_reward
-            writer.writerow([episode_reward])
+            writer.writerow([i + 1, float(episode_reward), float(episode_reward_atk), float(episode_reward + episode_reward_atk)])
         if TEST_EPISODES != 0:
             ave_reward = total_reward/TEST_EPISODES
             self.utility = ave_reward
@@ -515,6 +520,9 @@ if __name__ == "__main__":
     actual_adv_budget = int(sys.argv[6])
     n_experiment = int(sys.argv[7])
 
+    if defense == 'rl' or attack == 'rl':
+        raise ValueError("evaluate_sac.py requires 'sac'; use evaluate_ddpg.py for 'rl'")
+
     if model_name == 'snort':
         simulate_model = test_model_snort(def_budget, estimate_adv_budget)
         actual_model = test_model_snort(def_budget, actual_adv_budget)
@@ -583,14 +591,11 @@ if __name__ == "__main__":
 
         return utility
 
-    cores = 1
-    pool = multiprocessing.Pool(processes=1)
-    #cores = multiprocessing.cpu_count()
-    #pool = multiprocessing.Pool(processes=cores)
-
     utilities = []
-    for utility in pool.map(evaluation, range(n_experiment)):
-        utilities.append(utility)
+    # TensorFlow sessions contain thread locks and cannot safely cross a
+    # multiprocessing result boundary. Evaluate each experiment in-process.
+    for exper_index in range(n_experiment):
+        utilities.append(evaluation(exper_index))
     logging.info("The utility of the agent:")
     print(utilities)
     print(np.mean(np.array(utilities)))

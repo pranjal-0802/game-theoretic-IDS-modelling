@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-# Author: Liang Tong, Aron Laszka
-
-"""Reinforcement-learning based best-response policies."""
 import logging
 from numpy import array, float32
 from time import time
@@ -10,7 +6,7 @@ from config import config
 from model import Model
 from test import *
 from listutils import *
-from evalddpg import *
+
 import csv
 import multiprocessing
 import itertools
@@ -62,7 +58,7 @@ EXPLORATION = config.get('parameter', 'exploration')
 #gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.7)
 #config.gpu_options.allow_growth = True
 
-class DDPGbase(object):
+class DDPGbase2(object):
     def __init__(self, a_dim, s_dim):
         self.memory = np.zeros((MEMORY_CAPACITY, s_dim * 2 + a_dim + 1), dtype=np.float32)
         self.pointer = 0
@@ -178,7 +174,7 @@ class DDPGbase(object):
     def _build_c2(self, s, a, reuse=None, custom_getter=None):
         raise NotImplementedError
 
-class DDPGdefend(DDPGbase):
+class DDPGdefend2(DDPGbase2):
     def _build_a(self, s, reuse=None, custom_getter=None):
         trainable = True if reuse is None else False
         with tf.variable_scope('Actor', reuse=reuse, custom_getter=custom_getter):
@@ -216,7 +212,7 @@ class DDPGdefend(DDPGbase):
             return a
 
 
-class DDPGattack(DDPGbase):
+class DDPGattack2(DDPGbase2):
     def _build_a(self, s, reuse=None, custom_getter=None):
         trainable = True if reuse is None else False
         with tf.variable_scope('Actor', reuse=reuse, custom_getter=custom_getter):
@@ -253,7 +249,7 @@ class DDPGattack(DDPGbase):
             a = tf.layers.dense(h1, 1, activation=None, kernel_initializer=tf.contrib.layers.xavier_initializer(), name='a', trainable=trainable)
             return a
 
-class DDPGlearning:
+class DDPGlearning2:
     """
     Learning algorithm inspired by Q-learning. 
     States are represented as lists of arbitrary floats, while actions are represented as normalized lists of floats (i.e., floats are greater than or equal to zero and sum up to one).
@@ -271,9 +267,9 @@ class DDPGlearning:
         self.mode = mode
         self.utility = 0.0
         if self.mode == "defend":
-            self.ddpg = DDPGdefend(action_size, state_size)
+            self.ddpg = DDPGdefend2(action_size, state_size)
         else:
-            self.ddpg = DDPGattack(action_size, state_size)
+            self.ddpg = DDPGattack2(action_size, state_size)
 
     def learn_from_mix(self, model, initial_state, state_observe, state_update, op_profile, op_strategy):
         """
@@ -290,8 +286,8 @@ class DDPGlearning:
         # DDPG training process
         epsilon = EPSILON_MAX
         op_actions = np.random.choice(op_profile, MAX_EPISODES, p=op_strategy)
-       
-      
+     
+
 
         for i in range(MAX_EPISODES):
             global_state = initial_state
@@ -325,6 +321,7 @@ class DDPGlearning:
               
                 reward = -1.0*loss
                
+                
                 next_state = np.array(state_observe(next_global_state), dtype=np.float32)
                 
                 self.ddpg.store_transition(state, action, reward, next_state)
@@ -341,7 +338,7 @@ class DDPGlearning:
                             logging.info("Episode {}, Ave step reward {}".format(i+1, episode_reward/MAX_EP_STEPS))
                         epsilon = epsilon*EPSILON_DISCOUNT
                         break
-     
+       
 
     def evaluate(self, model, initial_state, state_observe, state_update, op_profile, op_strategy):
         """
@@ -357,18 +354,11 @@ class DDPGlearning:
         # DDPG test
         #logging.info("DDPG test starts.")
         total_reward = 0
-        op_actions = np.random.choice(op_profile, TEST_EPISODES, p=op_strategy)
-        f = open('rewards_per_attack.csv', 'w')
-        writer = csv.writer(f)
-        writer.writerow(['Episode', 'Defender Reward', 'Attacker Reward', 'Sum'])
-        #fm = open('m_per_attack.csv', 'w')
-        #writerm = csv.writer(fm)
-            
+        op_actions = np.random.choice(op_profile, TEST_EPISODES, p=op_strategy)            
         for i in range(TEST_EPISODES):
             global_state = initial_state
             state = np.array(state_observe(global_state),dtype=np.float32)
             episode_reward = 0.0
-            episode_reward_atk = 0.0
             op_action = op_actions[i]
             for j in range(MAX_TEST_STEPS):
                 # Choose the best action by the actor network
@@ -377,26 +367,18 @@ class DDPGlearning:
                 
                 (next_global_state, loss) = state_update(TEST_MODE, global_state, list(action), op_action)
                 next_state = np.array(state_observe(next_global_state), dtype=np.float32)
-                #state1 =  state[9:15]
-                #writerm.writerow([state1])
-                def_loss = next_global_state.U_defender - global_state.U_defender
-                atk_gain = next_global_state.U_attacker - global_state.U_attacker
                 global_state = next_global_state
 
                 state = next_state
                 step_reward = -1.0*loss
-
                 episode_reward += GAMMA**j*step_reward
-                episode_reward_atk += GAMMA**j*atk_gain
             #logging.info("Episode {}, Average reward in each step {}".format(i, episode_reward))
             total_reward += episode_reward
-            writer.writerow([i + 1, float(episode_reward), float(episode_reward_atk), float(episode_reward + episode_reward_atk)])
         if TEST_EPISODES != 0:
             ave_reward = total_reward/TEST_EPISODES
             self.utility = ave_reward
             logging.info("RL utililty: {}".format(ave_reward))
-        f.close()
-        #fm.close()
+
     def policy(self, model, state):
         """
         Get the action given by the state
@@ -417,7 +399,7 @@ class DDPGlearning:
             feasible_action = alpha
         return feasible_action
 
-class DefenderOracle:
+class DefenderOracle2:
     """Best-response investigation policy for the defender against mix strategy of the attacker."""
     def __init__(self, model_name, model, def_budget, estimate_adv_budget, exper_index, iteration_index):
         """
@@ -429,12 +411,12 @@ class DefenderOracle:
         """
         self.model_name = model_name
         self.mode = "defend"
-        self.agent = DDPGlearning(self.mode, len(model.alert_types) * model.horizon, len(model.alert_types) * model.horizon)
+        self.agent = DDPGlearning2(self.mode, len(model.alert_types) * model.horizon, len(model.alert_types) * model.horizon)
         saver = tf.train.Saver()
         saver.restore(self.agent.ddpg.sess, "../model/converge/{}_{}_{}_do/defender-{}-{}/ddpg.ckpt".format(self.model_name, def_budget, estimate_adv_budget, exper_index, iteration_index))
         tf.reset_default_graph()
 
-class AttackerOracle:
+class AttackerOracle2:
     """Best-response attack policy for the attacker against mixed strategy of defender."""
     def __init__(self, model, defense_profile, defense_strategy):
         """
@@ -446,7 +428,7 @@ class AttackerOracle:
         self.mode = "attack"
         state_size = model.horizon*(len(model.alert_types) + len(model.attack_types) + len(model.alert_types) * len(model.attack_types))
         action_size = len(model.attack_types)
-        self.agent = DDPGlearning(self.mode, state_size, action_size)
+        self.agent = DDPGlearning2(self.mode, state_size, action_size)
         saver = tf.train.Saver()
         def state_update(mode, state, action, delta):
             """
@@ -505,97 +487,3 @@ def get_payoff_mixed(model, attack_profile, defense_profile, attack_strategy, de
         total_discount_reward += episode_reward
     ave_discount_reward = total_discount_reward/MAX_EPISODES
     return ave_discount_reward
-
-if __name__ == "__main__":
-    logging.basicConfig(format='%(asctime)s / %(levelname)s: %(message)s', level=logging.DEBUG)
-    logging.info("Experiment starts.")
-    if len(sys.argv) < 8:
-        print("python ddpg.py [dataset] [defense] [def_budget] [estimate_adv_budget] [attack] [actual_adv_budget] [n_experiment]")
-        sys.exit(1)
-    model_name = sys.argv[1]
-    defense = sys.argv[2]
-    def_budget = int(sys.argv[3])
-    estimate_adv_budget = int(sys.argv[4])
-    attack = sys.argv[5]
-    actual_adv_budget = int(sys.argv[6])
-    n_experiment = int(sys.argv[7])
-
-    if defense == 'rl' or attack == 'rl':
-        raise ValueError("evaluate_sac.py requires 'sac'; use evaluate_ddpg.py for 'rl'")
-
-    if model_name == 'snort':
-        simulate_model = test_model_snort(def_budget, estimate_adv_budget)
-        actual_model = test_model_snort(def_budget, actual_adv_budget)
-    elif model_name == 'fraud':
-        simulate_model = test_model_fraud(def_budget, estimate_adv_budget)
-        actual_model = test_model_fraud(def_budget, actual_adv_budget)
-    
-    defense_strategies = []
-    if defense == 'sac':
-        for i in range(n_experiment):
-            defense_strategy = pickle.load(open("../model/converge/{}_{}_{}_do/defender-strategy-{}.pickle".format(model_name, def_budget, estimate_adv_budget, i), 'rb'))
-            defense_strategies.append(defense_strategy)
-
-    def evaluation(exper_index):
-        random_seed = exper_index
-        np.random.seed(random_seed)
-        tf.set_random_seed(random_seed)
-        #tf.compat.v1.set_random_seed(random_seed)
-        utility = 0
-
-        # First load the defense profile and strategy
-        if defense == 'sac':
-            defense_strategy =  defense_strategies[exper_index]
-            #defense_strategy = pickle.load(open("../model/converge/{}_{}_{}_do/defender-strategy-{}.pickle".format(model_name, def_budget, estimate_adv_budget, exper_index), 'rb'))
-            defense_profile = [test_defense_newest]
-            print(len(defense_strategy)-1)
-            for i in range(len(defense_strategy)-1):
-                print(i)
-                defender = DefenderOracle(model_name, simulate_model, def_budget, estimate_adv_budget, exper_index, i)
-                defense_profile.append(defender.agent.policy)
-
-
-        elif defense == 'uniform':
-            defense_strategy = [1.0]
-            defense_profile = [test_defense_newest]
-        elif defense == 'rio':
-            defense_strategy = [1.0]
-            defense_profile = [test_defense_icde]
-        elif defense == 'proportion':
-            defense_strategy = [1.0]
-            defense_profile = [test_defense_proportion]
-        elif defense == 'gain':
-            defense_strategy = [1.0]
-            defense_profile = [test_defense_aics]
-        elif defense == 'suricata':
-            defense_strategy = [1.0]
-            defense_profile = [test_defense_suricata]                    
-
-        # Then load the attack profile and strategy
-        if attack == 'sac':
-            attacker = AttackerOracle(actual_model, defense_profile, defense_strategy) 
-            utility = -1 * attacker.agent.utility
-
-
-        elif attack == 'uniform':
-            attack_strategy = [1.0]
-            attack_profile = [test_attack_action]
-            utility = get_payoff_mixed(actual_model, attack_profile, defense_profile, attack_strategy, defense_strategy)
-        elif attack == 'greedy':
-            attack_strategy = [1.0]
-            if model_name == 'fraud':
-                attack_profile = [test_attack_aics]
-            elif model_name == 'snort':
-                attack_profile = [test_attack_snort]
-            utility = get_payoff_mixed(actual_model, attack_profile, defense_profile, attack_strategy, defense_strategy)
-
-        return utility
-
-    utilities = []
-    # TensorFlow sessions contain thread locks and cannot safely cross a
-    # multiprocessing result boundary. Evaluate each experiment in-process.
-    for exper_index in range(n_experiment):
-        utilities.append(evaluation(exper_index))
-    logging.info("The utility of the agent:")
-    print(utilities)
-    print(np.mean(np.array(utilities)))
