@@ -6,8 +6,8 @@ from listutils import *
 from model import Model
 from test import *
 from listutils import *
-from ddpg import DefenderOracle
-from ddpg import AttackerOracle
+from sac import DefenderOracle
+from sac import AttackerOracle
 from config import config
 
 import multiprocessing
@@ -16,8 +16,11 @@ import random
 import logging
 import pickle
 import sys
+import csv
 import tensorflow as tf
 import os
+import glob
+import shutil
 import pickle
 import nashpy as nash 
 
@@ -109,21 +112,31 @@ def get_payoff_mixed(model, attack_profile, defense_profile, attack_strategy, de
 
     initial_state = Model.State(model)
 
-    for i in range(MAX_EPISODES):
-        state = initial_state
-        episode_reward_def = 0.0
-        episode_reward_atk = 0.0
-        defense_policy = defense_policies[i]
-        attack_policy = attack_policies[i]
-        for j in range(MAX_STEPS):
-            next_state = model.next_state('old', state, defense_policy, attack_policy)
-            def_loss = next_state.U_defender - state.U_defender
-            atk_gain = next_state.U_attacker - state.U_attacker
-            state = next_state
-            episode_reward_def += GAMMA**j * (-1.0 * def_loss)
-            episode_reward_atk += GAMMA**j * atk_gain
-        total_discount_reward_def += episode_reward_def
-        total_discount_reward_atk += episode_reward_atk
+    csv_path = os.path.join(os.getcwd(), 'episode_rewards.csv')
+    with open(csv_path, 'w', newline='') as csv_file:
+        writer = csv.writer(csv_file)
+        writer.writerow(['Episode', 'Defender Reward', 'Attacker Reward', 'Sum'])
+        for i in range(MAX_EPISODES):
+            state = initial_state
+            episode_reward_def = 0.0
+            episode_reward_atk = 0.0
+            defense_policy = defense_policies[i]
+            attack_policy = attack_policies[i]
+            for j in range(MAX_STEPS):
+                next_state = model.next_state('old', state, defense_policy, attack_policy)
+                def_loss = next_state.U_defender - state.U_defender
+                atk_gain = next_state.U_attacker - state.U_attacker
+                state = next_state
+                episode_reward_def += GAMMA**j * (-1.0 * def_loss)
+                episode_reward_atk += GAMMA**j * atk_gain
+            total_discount_reward_def += episode_reward_def
+            total_discount_reward_atk += episode_reward_atk
+            writer.writerow([
+                i + 1,
+                float(episode_reward_def),
+                float(episode_reward_atk),
+                float(episode_reward_def + episode_reward_atk),
+            ])
 
     ave_discount_reward_def = total_discount_reward_def / MAX_EPISODES
     ave_discount_reward_atk = total_discount_reward_atk / MAX_EPISODES
@@ -180,7 +193,23 @@ def update_profile(model, payoff_def, payoff_atk, attack_profile,
 
     return payoff_def, payoff_atk, attack_profile, defense_profile
 
-def double_oracle(model, exper_index):
+def promote_checkpoint(checkpoint_root, role, exper_index, iteration_index, trial_index):
+    source_dir = os.path.join(
+        checkpoint_root,
+        '{}-{}-{}-{}'.format(role, exper_index, iteration_index, trial_index))
+    target_dir = os.path.join(
+        checkpoint_root,
+        '{}-{}-{}'.format(role, exper_index, iteration_index))
+    os.makedirs(target_dir, exist_ok=True)
+    for source_path in glob.glob(os.path.join(source_dir, 'ddpg.ckpt.*')):
+        target_path = os.path.join(target_dir, os.path.basename(source_path))
+        shutil.copy2(source_path, target_path)
+
+def double_oracle(model, exper_index, model_name, def_budget, adv_budget):
+    checkpoint_root = os.path.join(
+        '../model/converge',
+        '{}_{}_{}_do'.format(model_name, int(def_budget), int(adv_budget)))
+    os.makedirs(checkpoint_root, exist_ok=True)
     attack_profile = []
     defense_profile = []
     payoff_record = []
@@ -221,23 +250,26 @@ def double_oracle(model, exper_index):
         defense_response = []
         defense_utility = []
         for k in range(N_TRIAL):
-            attack_response.append(AttackerOracle(model, defense_profile, defense_strategy, exper_index, i, k))
-            defense_response.append(DefenderOracle(model, attack_profile, attack_strategy, exper_index, i, k))
+            attack_response.append(AttackerOracle(model, defense_profile, defense_strategy, exper_index, i, k, checkpoint_root))
+            defense_response.append(DefenderOracle(model, attack_profile, attack_strategy, exper_index, i, k, checkpoint_root))
             attack_utility.append(attack_response[k].agent.utility)
             defense_utility.append(defense_response[k].agent.utility)
 
-        pickle.dump(defense_utility, open("../model/defender-utility-{}.pickle".format(exper_index), 'wb'))
+        pickle.dump(defense_utility, open(os.path.join(checkpoint_root, "defender-utility-{}.pickle".format(exper_index)), 'wb'))
 
         attack_index = attack_utility.index(max(attack_utility))
         defense_index = defense_utility.index(max(defense_utility))
         attack_policy = attack_response[attack_index].agent.policy
         defense_policy = defense_response[defense_index].agent.policy
 
+        promote_checkpoint(checkpoint_root, 'attacker', exper_index, i, attack_index)
+        promote_checkpoint(checkpoint_root, 'defender', exper_index, i, defense_index)
+
         for k in range(N_TRIAL):
             if k != defense_index:
-                os.system("rm -rf ../model/defender-{}-{}-{}".format(exper_index, i, k))
+                shutil.rmtree(os.path.join(checkpoint_root, 'defender-{}-{}-{}'.format(exper_index, i, k)), ignore_errors=True)
             if k != attack_index:
-                os.system("rm -rf ../model/attacker-{}-{}-{}".format(exper_index, i, k))
+                shutil.rmtree(os.path.join(checkpoint_root, 'attacker-{}-{}-{}'.format(exper_index, i, k)), ignore_errors=True)
 
         payoff_def, payoff_atk, attack_profile, defense_profile = update_profile(
             model, payoff_def, payoff_atk, attack_profile, defense_profile,
@@ -249,12 +281,12 @@ def double_oracle(model, exper_index):
         attack_pure_utility = np.dot(payoff_atk[:, i + initial_attack_size][:-1], defense_strategy)
 
         if defense_pure_utility <= current_defense_utility and attack_pure_utility <= current_attack_utility:
-            pickle.dump(defense_strategy, open("../model/defender-strategy-{}.pickle".format(exper_index), 'wb'))
-            pickle.dump(attack_strategy, open("../model/attacker-strategy-{}.pickle".format(exper_index), 'wb'))
+            pickle.dump(defense_strategy, open(os.path.join(checkpoint_root, "defender-strategy-{}.pickle".format(exper_index)), 'wb'))
+            pickle.dump(attack_strategy, open(os.path.join(checkpoint_root, "attacker-strategy-{}.pickle".format(exper_index)), 'wb'))
             break
         if i == MAX_ITERATION - 1:
-            pickle.dump(defense_strategy, open("../model/defender-strategy-{}.pickle".format(exper_index), 'wb'))
-            pickle.dump(attack_strategy, open("../model/attacker-strategy-{}.pickle".format(exper_index), 'wb'))
+            pickle.dump(defense_strategy, open(os.path.join(checkpoint_root, "defender-strategy-{}.pickle".format(exper_index)), 'wb'))
+            pickle.dump(attack_strategy, open(os.path.join(checkpoint_root, "attacker-strategy-{}.pickle".format(exper_index)), 'wb'))
 
     return payoff_record[-1]
 
@@ -289,7 +321,7 @@ if __name__ == "__main__":
         random_seed = exper_index
         np.random.seed(random_seed)
         tf.set_random_seed(random_seed)
-        do_utility = double_oracle(model, exper_index)
+        do_utility = double_oracle(model, exper_index, model_name, def_budget, adv_budget)
         return do_utility
 
     cores = multiprocessing.cpu_count()
