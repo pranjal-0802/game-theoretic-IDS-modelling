@@ -21,8 +21,19 @@ import tensorflow as tf
 import os
 import glob
 import shutil
-import pickle
 import nashpy as nash 
+
+def get_oracles(algo='sac'):
+    """Return (DefenderOracle, AttackerOracle) for the specified RL algorithm."""
+    if algo == 'td3':
+        from td3_v3_1 import DefenderOracle as DefOracle, AttackerOracle as AtkOracle
+    elif algo == 'ddpg':
+        from ddpg import DefenderOracle as DefOracle, AttackerOracle as AtkOracle
+    elif algo == 'sac':
+        from sac import DefenderOracle as DefOracle, AttackerOracle as AtkOracle
+    else:
+        raise ValueError("Unknown oracle algorithm: {}".format(algo))
+    return DefOracle, AtkOracle 
 
 os.environ["TF_CPP_MIN_LOG_LEVEL"]='2'
 
@@ -205,14 +216,28 @@ def promote_checkpoint(checkpoint_root, role, exper_index, iteration_index, tria
         target_path = os.path.join(target_dir, os.path.basename(source_path))
         shutil.copy2(source_path, target_path)
 
-def double_oracle(model, exper_index, model_name, def_budget, adv_budget):
+def double_oracle(model, exper_index, model_name, def_budget, adv_budget, algo='sac'):
     checkpoint_root = os.path.join(
         '../model/converge',
-        '{}_{}_{}_do'.format(model_name, int(def_budget), int(adv_budget)))
+        '{}_{}_{}_{}_do'.format(model_name, int(def_budget), int(adv_budget), algo))
     os.makedirs(checkpoint_root, exist_ok=True)
+    if algo == 'sac':
+        legacy_dir = os.path.join('../model/converge', '{}_{}_{}_do'.format(model_name, int(def_budget), int(adv_budget)))
+        if not os.path.exists(legacy_dir):
+            try:
+                os.symlink('{}_{}_{}_{}_do'.format(model_name, int(def_budget), int(adv_budget), algo), legacy_dir)
+            except Exception:
+                pass
     attack_profile = []
     defense_profile = []
     payoff_record = []
+
+    DefOracle, AtkOracle = get_oracles(algo)
+
+    try:
+        selection = config.get('game', 'equilibrium_selection')
+    except Exception:
+        selection = 'defender_max'
 
     initial_payoff_def, initial_payoff_atk = get_payoff(model, test_attack_action, test_defense_newest)
     payoff_def = np.array([[initial_payoff_def]])
@@ -225,7 +250,7 @@ def double_oracle(model, exper_index, model_name, def_budget, adv_budget):
 
     for i in range(MAX_ITERATION):
         attack_strategy, defense_strategy, utility = find_mixed_NE(
-            payoff_def, payoff_atk, selection='defender_max', report_range=True)
+            payoff_def, payoff_atk, selection=selection, report_range=True)
         payoff_record.append(utility)
 
         # Current equilibrium utility for BOTH players, computed on matrices as they
@@ -250,12 +275,13 @@ def double_oracle(model, exper_index, model_name, def_budget, adv_budget):
         defense_response = []
         defense_utility = []
         for k in range(N_TRIAL):
-            attack_response.append(AttackerOracle(model, defense_profile, defense_strategy, exper_index, i, k, checkpoint_root))
-            defense_response.append(DefenderOracle(model, attack_profile, attack_strategy, exper_index, i, k, checkpoint_root))
+            attack_response.append(AtkOracle(model, defense_profile, defense_strategy, exper_index, i, k, checkpoint_root))
+            defense_response.append(DefOracle(model, attack_profile, attack_strategy, exper_index, i, k, checkpoint_root))
             attack_utility.append(attack_response[k].agent.utility)
             defense_utility.append(defense_response[k].agent.utility)
 
         pickle.dump(defense_utility, open(os.path.join(checkpoint_root, "defender-utility-{}.pickle".format(exper_index)), 'wb'))
+        pickle.dump(attack_utility, open(os.path.join(checkpoint_root, "attacker-utility-{}.pickle".format(exper_index)), 'wb'))
 
         attack_index = attack_utility.index(max(attack_utility))
         defense_index = defense_utility.index(max(defense_utility))
@@ -302,13 +328,14 @@ if __name__ == "__main__":
     logging.basicConfig(format='%(asctime)s / %(levelname)s: %(message)s', level=logging.DEBUG)
     logging.info("Experiment starts.")
     if len(sys.argv) < 5:
-        print("python do_h1_mul.py [model_name] [def_budget] [adv_budget] [n_experiment]")
+        print("python double_oracle.py [model_name] [def_budget] [adv_budget] [n_experiment] [algo (optional: sac/td3/ddpg)]")
         sys.exit(1)
 
     model_name = sys.argv[1]
     def_budget = float(sys.argv[2])
     adv_budget = float(sys.argv[3])
     n_experiment = int(sys.argv[4])
+    algo = sys.argv[5] if len(sys.argv) > 5 else 'sac'
 
     if model_name == 'suricata':
         model = test_model_suricata(def_budget, adv_budget)
@@ -321,15 +348,17 @@ if __name__ == "__main__":
         random_seed = exper_index
         np.random.seed(random_seed)
         tf.set_random_seed(random_seed)
-        do_utility = double_oracle(model, exper_index, model_name, def_budget, adv_budget)
+        do_utility = double_oracle(model, exper_index, model_name, def_budget, adv_budget, algo)
         return do_utility
 
-    cores = multiprocessing.cpu_count()
-    #cores = 1	
+    allocated_cores = int(os.environ.get('SLURM_CPUS_PER_TASK', multiprocessing.cpu_count()))
+    cores = max(1, min(n_experiment, allocated_cores))
     pool = multiprocessing.Pool(processes=cores)
     utilities = []
     for do_utility in pool.imap(evaluation, range(n_experiment)):
         utilities.append(do_utility)    
+    pool.close()
+    pool.join()
     logging.info("The utility of the agent:")
     print(utilities)
 

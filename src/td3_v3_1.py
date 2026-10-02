@@ -395,7 +395,7 @@ class DefenderOracle:
             """
             delta = model.make_investigation_feasible(state.N, unflatten_list(action, len(model.alert_types))) # make_investigation_feasible ``unnormalizes'' the action
             next_state = model.next_state(mode, state, delta, alpha)
-            loss = next_state.U - state.U
+            loss = next_state.U_defender - state.U_defender
             return (next_state, loss)
         if checkpoint_root is None:
             checkpoint_root = '../model'
@@ -447,7 +447,7 @@ class AttackerOracle:
             """
             alpha = model.make_attack_feasible(action)      
             next_state = model.next_state(mode, state, delta, alpha)
-            loss = -1.0 * (next_state.U - state.U)
+            loss = -1.0 * (next_state.U_attacker - state.U_attacker)
             return (next_state, loss)                        
         if checkpoint_root is None:
             checkpoint_root = '../model'

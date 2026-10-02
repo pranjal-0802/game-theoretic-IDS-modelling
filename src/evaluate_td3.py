@@ -376,14 +376,15 @@ class DDPGlearning:
         #logging.info("DDPG test starts.")
         total_reward = 0
         op_actions = np.random.choice(op_profile, TEST_EPISODES, p=op_strategy)
-        #f = open('rewards_per_attack.csv', 'a')
-        #writer = csv.writer(f)
-        #fm = open('m_per_attack.csv', 'a')
-        #writerm = csv.writer(fm)            
+        f = open('rewards_per_attack.csv', 'w')
+        writer = csv.writer(f)
+        writer.writerow(['Episode', 'Defender Reward', 'Attacker Reward', 'Sum'])
         for i in range(TEST_EPISODES):
             global_state = initial_state
             state = np.array(state_observe(global_state),dtype=np.float32)
             episode_reward = 0.0
+            episode_reward_def = 0.0
+            episode_reward_atk = 0.0
             op_action = op_actions[i]
             for j in range(MAX_TEST_STEPS):
                 # Choose the best action by the actor network
@@ -392,22 +393,23 @@ class DDPGlearning:
                 
                 (next_global_state, loss) = state_update(TEST_MODE, global_state, list(action), op_action)
                 next_state = np.array(state_observe(next_global_state), dtype=np.float32)
-                state1 =  state[7:14]
-                #writerm.writerow([state1])
+                def_loss = next_global_state.U_defender - global_state.U_defender
+                atk_gain = next_global_state.U_attacker - global_state.U_attacker
                 global_state = next_global_state
 
                 state = next_state
                 step_reward = -1.0*loss
-                #writer.writerow([step_reward])
+
                 episode_reward += GAMMA**j*step_reward
-            #logging.info("Episode {}, Average reward in each step {}".format(i, episode_reward))
+                episode_reward_def += GAMMA**j*(-1.0 * def_loss)
+                episode_reward_atk += GAMMA**j*atk_gain
             total_reward += episode_reward
+            writer.writerow([i + 1, float(episode_reward_def), float(episode_reward_atk), float(episode_reward_def + episode_reward_atk)])
         if TEST_EPISODES != 0:
             ave_reward = total_reward/TEST_EPISODES
             self.utility = ave_reward
             logging.info("RL utililty: {}".format(ave_reward))
-        #f.close()
-        #fm.close()  
+        f.close()  
     def policy(self, model, state):
         """
         Get the action given by the state
@@ -442,7 +444,10 @@ class DefenderOracle:
         self.mode = "defend"
         self.agent = DDPGlearning(self.mode, len(model.alert_types) * model.horizon, len(model.alert_types) * model.horizon)
         saver = tf.train.Saver()
-        saver.restore(self.agent.ddpg.sess, "../model/converge/{}_{}_{}_do/defender-{}-{}/ddpg.ckpt".format(self.model_name, def_budget, estimate_adv_budget, exper_index, iteration_index))
+        ckpt_dir = "../model/converge/{}_{}_{}_td3_do".format(self.model_name, def_budget, estimate_adv_budget)
+        if not os.path.exists(ckpt_dir):
+            ckpt_dir = "../model/converge/{}_{}_{}_do".format(self.model_name, def_budget, estimate_adv_budget)
+        saver.restore(self.agent.ddpg.sess, "{}/defender-{}-{}/ddpg.ckpt".format(ckpt_dir, exper_index, iteration_index))
         tf.reset_default_graph()
 
 class AttackerOracle:
@@ -469,7 +474,7 @@ class AttackerOracle:
             """
             alpha = model.make_attack_feasible(action)      
             next_state = model.next_state(mode, state, delta, alpha)
-            loss = -1.0 * (next_state.U - state.U)
+            loss = -1.0 * (next_state.U_attacker - state.U_attacker)
             return (next_state, loss)                        
         self.agent.learn_from_mix(model,
                         Model.State(model),
@@ -544,8 +549,11 @@ if __name__ == "__main__":
     
     defense_strategies = []
     if defense == 'td3':
+        conv_dir = "../model/converge/{}_{}_{}_td3_do".format(model_name, def_budget, estimate_adv_budget)
+        if not os.path.exists(conv_dir):
+            conv_dir = "../model/converge/{}_{}_{}_do".format(model_name, def_budget, estimate_adv_budget)
         for i in range(n_experiment):
-            defense_strategy = pickle.load(open("../model/converge/{}_{}_{}_do/defender-strategy-{}.pickle".format(model_name, def_budget, estimate_adv_budget, i), 'rb'))
+            defense_strategy = pickle.load(open("{}/defender-strategy-{}.pickle".format(conv_dir, i), 'rb'))
             defense_strategies.append(defense_strategy)
 
     def evaluation(exper_index):
@@ -556,14 +564,13 @@ if __name__ == "__main__":
         utility = 0
 
         # First load the defense profile and strategy
-        if defense == 'sac':
+        if defense == 'td3':
             defense_strategy =  defense_strategies[exper_index]
-            #defense_strategy = pickle.load(open("../model/converge/{}_{}_{}_do/defender-strategy-{}.pickle".format(model_name, def_budget, estimate_adv_budget, exper_index), 'rb'))
             defense_profile = [test_defense_newest]
             print(len(defense_strategy)-1)
             for i in range(len(defense_strategy)-1):
                 print(i)
-                defender = DefenderOracle2(model_name, simulate_model, def_budget, estimate_adv_budget, exper_index, i)
+                defender = DefenderOracle(model_name, simulate_model, def_budget, estimate_adv_budget, exper_index, i)
                 defense_profile.append(defender.agent.policy)
         elif defense == 'uniform':
             defense_strategy = [1.0]
@@ -582,11 +589,8 @@ if __name__ == "__main__":
             defense_profile = [test_defense_suricata]                    
 
         # Then load the attack profile and strategy
-        if attack == 'ddpg':
-            attacker = AttackerOracle3(actual_model, defense_profile, defense_strategy) 
-            utility = -1 * attacker.agent.utility
-        elif attack == 'sac':
-            attacker = AttackerOracle2(actual_model, defense_profile, defense_strategy) 
+        if attack == 'td3':
+            attacker = AttackerOracle(actual_model, defense_profile, defense_strategy) 
             utility = -1 * attacker.agent.utility
         elif attack == 'fixed':
             attack_strategy = [1.0]
@@ -604,14 +608,9 @@ if __name__ == "__main__":
 
         return utility
 
-    cores = 1
-    pool = multiprocessing.Pool(processes=1)
-    #cores = multiprocessing.cpu_count()
-    #pool = multiprocessing.Pool(processes=cores)
-
     utilities = []
-    for utility in pool.map(evaluation, range(n_experiment)):
-        utilities.append(utility)
+    for exper_index in range(n_experiment):
+        utilities.append(evaluation(exper_index))
     logging.info("The utility of the agent:")
     print(utilities)
     print(np.mean(np.array(utilities)))

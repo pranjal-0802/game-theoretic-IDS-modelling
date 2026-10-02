@@ -3,3 +3,4 @@ __pycache__/
 *.out
 *.err
 src/reward_balance.csv
+results/

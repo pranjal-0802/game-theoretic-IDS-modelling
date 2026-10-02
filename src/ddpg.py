@@ -335,7 +335,7 @@ class DDPGlearning:
 
 class DefenderOracle:
     """Best-response investigation policy for the defender against mix strategy of the attacker."""
-    def __init__(self, model, attack_profile, attack_strategy, exper_index, iteration_index, trial_index):
+    def __init__(self, model, attack_profile, attack_strategy, exper_index, iteration_index, trial_index, checkpoint_root=None):
         """
         Construct a best-response object using QLearning.
         :param model: Model of the alert prioritization problem (i.e., Model object).
@@ -358,19 +358,22 @@ class DefenderOracle:
             next_state = model.next_state(mode, state, delta, alpha)
             loss = next_state.U_defender - state.U_defender
             return (next_state, loss)
-        if not os.path.exists('../model/defender-{}-{}-{}/ddpg.ckpt.meta'.format(exper_index, iteration_index, trial_index)):
+        if checkpoint_root is None:
+            checkpoint_root = '../model'
+        checkpoint_name = 'defender-{}-{}-{}'.format(exper_index, iteration_index, trial_index)
+        checkpoint_dir = os.path.join(checkpoint_root, checkpoint_name)
+        if not os.path.exists(checkpoint_dir + '/ddpg.ckpt.meta'):
             print("defend-{}-{}_{}".format(exper_index, iteration_index, trial_index))
-            cmd = "mkdir ../model/defender-{}-{}-{}".format(exper_index, iteration_index, trial_index)
-            os.system(cmd)
+            os.makedirs(checkpoint_dir, exist_ok=True)
             self.agent.learn_from_mix(model,
                                      Model.State(model),
                                      lambda state: flatten_lists(state.N),
                                      state_update,
                                      attack_profile,
                                      attack_strategy)
-            saver.save(self.agent.ddpg.sess, "../model/defender-{}-{}-{}/ddpg.ckpt".format(exper_index, iteration_index, trial_index))        
-        #else:
-        #    saver.restore(self.agent.ddpg.sess, "../model/defender-{}/ddpg.ckpt".format(exper_index))
+            saver.save(self.agent.ddpg.sess, os.path.join(checkpoint_dir, 'ddpg.ckpt'))
+        else:
+            saver.restore(self.agent.ddpg.sess, os.path.join(checkpoint_dir, 'ddpg.ckpt'))
         self.agent.evaluate(model,
                            Model.State(model),
                            lambda state: flatten_lists(state.N),
@@ -381,7 +384,7 @@ class DefenderOracle:
 
 class AttackerOracle:
     """Best-response attack policy for the attacker against mixed strategy of defender."""
-    def __init__(self, model, defense_profile, defense_strategy, exper_index, iteration_index, trial_index):
+    def __init__(self, model, defense_profile, defense_strategy, exper_index, iteration_index, trial_index, checkpoint_root=None):
         """
         Construct a best-response object using QLearning.
         :param model: Model of the alert prioritization problem (i.e., Model object).
@@ -405,17 +408,22 @@ class AttackerOracle:
             next_state = model.next_state(mode, state, delta, alpha)
             loss = -1.0 * (next_state.U_attacker - state.U_attacker)
             return (next_state, loss)                        
-        if not os.path.exists('../model/attacker-{}-{}-{}/ddpg.ckpt.meta'.format(exper_index, iteration_index, trial_index)):
+        if checkpoint_root is None:
+            checkpoint_root = '../model'
+        checkpoint_name = 'attacker-{}-{}-{}'.format(exper_index, iteration_index, trial_index)
+        checkpoint_dir = os.path.join(checkpoint_root, checkpoint_name)
+        if not os.path.exists(checkpoint_dir + '/ddpg.ckpt.meta'):
             print("attack-{}-{}_{}".format(exper_index, iteration_index, trial_index))
-            cmd = "mkdir ../model/attacker-{}-{}-{}".format(exper_index, iteration_index, trial_index)
-            os.system(cmd)
+            os.makedirs(checkpoint_dir, exist_ok=True)
             self.agent.learn_from_mix(model,
                             Model.State(model),
                             lambda state: flatten_state(state),                        
                             state_update,
                             defense_profile,
                             defense_strategy)
-            saver.save(self.agent.ddpg.sess, "../model/attacker-{}-{}-{}/ddpg.ckpt".format(exper_index, iteration_index, trial_index)) 
+            saver.save(self.agent.ddpg.sess, os.path.join(checkpoint_dir, 'ddpg.ckpt'))
+        else:
+            saver.restore(self.agent.ddpg.sess, os.path.join(checkpoint_dir, 'ddpg.ckpt')) 
         self.agent.evaluate(model,
                            Model.State(model),
                            lambda state: flatten_state(state),

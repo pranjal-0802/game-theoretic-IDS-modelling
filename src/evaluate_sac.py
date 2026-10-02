@@ -368,6 +368,7 @@ class DDPGlearning:
             global_state = initial_state
             state = np.array(state_observe(global_state),dtype=np.float32)
             episode_reward = 0.0
+            episode_reward_def = 0.0
             episode_reward_atk = 0.0
             op_action = op_actions[i]
             for j in range(MAX_TEST_STEPS):
@@ -387,10 +388,11 @@ class DDPGlearning:
                 step_reward = -1.0*loss
 
                 episode_reward += GAMMA**j*step_reward
+                episode_reward_def += GAMMA**j*(-1.0 * def_loss)
                 episode_reward_atk += GAMMA**j*atk_gain
             #logging.info("Episode {}, Average reward in each step {}".format(i, episode_reward))
             total_reward += episode_reward
-            writer.writerow([i + 1, float(episode_reward), float(episode_reward_atk), float(episode_reward + episode_reward_atk)])
+            writer.writerow([i + 1, float(episode_reward_def), float(episode_reward_atk), float(episode_reward_def + episode_reward_atk)])
         if TEST_EPISODES != 0:
             ave_reward = total_reward/TEST_EPISODES
             self.utility = ave_reward
@@ -431,7 +433,10 @@ class DefenderOracle:
         self.mode = "defend"
         self.agent = DDPGlearning(self.mode, len(model.alert_types) * model.horizon, len(model.alert_types) * model.horizon)
         saver = tf.train.Saver()
-        saver.restore(self.agent.ddpg.sess, "../model/converge/{}_{}_{}_do/defender-{}-{}/ddpg.ckpt".format(self.model_name, def_budget, estimate_adv_budget, exper_index, iteration_index))
+        ckpt_dir = "../model/converge/{}_{}_{}_sac_do".format(self.model_name, def_budget, estimate_adv_budget)
+        if not os.path.exists(ckpt_dir):
+            ckpt_dir = "../model/converge/{}_{}_{}_do".format(self.model_name, def_budget, estimate_adv_budget)
+        saver.restore(self.agent.ddpg.sess, "{}/defender-{}-{}/ddpg.ckpt".format(ckpt_dir, exper_index, iteration_index))
         tf.reset_default_graph()
 
 class AttackerOracle:
@@ -458,7 +463,7 @@ class AttackerOracle:
             """
             alpha = model.make_attack_feasible(action)      
             next_state = model.next_state(mode, state, delta, alpha)
-            loss = -1.0 * (next_state.U - state.U)
+            loss = -1.0 * (next_state.U_attacker - state.U_attacker)
             return (next_state, loss)                        
         self.agent.learn_from_mix(model,
                         Model.State(model),
@@ -532,8 +537,11 @@ if __name__ == "__main__":
     
     defense_strategies = []
     if defense == 'sac':
+        conv_dir = "../model/converge/{}_{}_{}_sac_do".format(model_name, def_budget, estimate_adv_budget)
+        if not os.path.exists(conv_dir):
+            conv_dir = "../model/converge/{}_{}_{}_do".format(model_name, def_budget, estimate_adv_budget)
         for i in range(n_experiment):
-            defense_strategy = pickle.load(open("../model/converge/{}_{}_{}_do/defender-strategy-{}.pickle".format(model_name, def_budget, estimate_adv_budget, i), 'rb'))
+            defense_strategy = pickle.load(open("{}/defender-strategy-{}.pickle".format(conv_dir, i), 'rb'))
             defense_strategies.append(defense_strategy)
 
     def evaluation(exper_index):
