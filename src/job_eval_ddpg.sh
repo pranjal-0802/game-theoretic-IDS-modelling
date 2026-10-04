@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -p compute
+#SBATCH -p big_compute
 #SBATCH -N 1
 #SBATCH -c 4
 #SBATCH -t 06:00:00
