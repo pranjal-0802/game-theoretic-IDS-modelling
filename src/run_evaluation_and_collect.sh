@@ -15,7 +15,8 @@ mkdir -p "$RESULTS_DIR"
 
 cd "$SRC_DIR"
 
-N_EXP=${3:-1}
+N_EXP=${3:-20}
+export REWARDS_CSV_FILE="$RESULTS_DIR/rewards_per_attack.csv"
 
 echo "=== Running evaluation for $ALGO (n_experiment=$N_EXP) at $(date) ==="
 if [ "$ALGO" == "sac" ]; then
@@ -28,8 +29,8 @@ fi
 EVAL_EXIT=$?
 echo "Evaluation finished with exit code $EVAL_EXIT at $(date)"
 
-# Copy rewards_per_attack.csv
-if [ -f "$SRC_DIR/rewards_per_attack.csv" ]; then
+# Copy rewards_per_attack.csv if not written directly
+if [ ! -f "$RESULTS_DIR/rewards_per_attack.csv" ] && [ -f "$SRC_DIR/rewards_per_attack.csv" ]; then
     cp "$SRC_DIR/rewards_per_attack.csv" "$RESULTS_DIR/rewards_per_attack.csv"
 fi
 

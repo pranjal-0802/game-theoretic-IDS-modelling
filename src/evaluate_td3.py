@@ -361,7 +361,7 @@ class DDPGlearning:
 
 
 
-    def evaluate(self, model, initial_state, state_observe, state_update, op_profile, op_strategy):
+    def evaluate(self, model, initial_state, state_observe, state_update, op_profile, op_strategy, exper_index=0):
         """
         Evaluate the agent obtained by using Q-learning.
         :param model: Model of the alert prioritization problem (i.e., Model object).
@@ -370,15 +370,21 @@ class DDPGlearning:
         :param state_update: Updates the state based on an action. Function, takes a state (see state_observe), an action (normalized list of floats) and oppoent's action sampled from its mixed strategy, return the next state (may be arbitrary object).
         :param op_profile: List, action profile of the opponent.
         :param op_strategy: List, mixed strategy of the opponent.
+        :param exper_index: Index of current experiment (0-based) for global episode tracking.
         """
         #self.ddpg.store_model()
         # DDPG test
         #logging.info("DDPG test starts.")
         total_reward = 0
         op_actions = np.random.choice(op_profile, TEST_EPISODES, p=op_strategy)
-        f = open('rewards_per_attack.csv', 'w')
-        writer = csv.writer(f)
-        writer.writerow(['Episode', 'Defender Reward', 'Attacker Reward', 'Sum'])
+        csv_filename = os.environ.get('REWARDS_CSV_FILE', 'rewards_per_attack.csv')
+        if exper_index == 0:
+            f = open(csv_filename, 'w')
+            writer = csv.writer(f)
+            writer.writerow(['Episode', 'Defender Reward', 'Attacker Reward', 'Sum'])
+        else:
+            f = open(csv_filename, 'a')
+            writer = csv.writer(f)
         for i in range(TEST_EPISODES):
             global_state = initial_state
             state = np.array(state_observe(global_state),dtype=np.float32)
@@ -404,7 +410,8 @@ class DDPGlearning:
                 episode_reward_def += GAMMA**j*(-1.0 * def_loss)
                 episode_reward_atk += GAMMA**j*atk_gain
             total_reward += episode_reward
-            writer.writerow([i + 1, float(episode_reward_def), float(episode_reward_atk), float(episode_reward_def + episode_reward_atk)])
+            global_ep = exper_index * TEST_EPISODES + i + 1
+            writer.writerow([global_ep, float(episode_reward_def), float(episode_reward_atk), float(episode_reward_def + episode_reward_atk)])
         if TEST_EPISODES != 0:
             ave_reward = total_reward/TEST_EPISODES
             self.utility = ave_reward
@@ -452,12 +459,13 @@ class DefenderOracle:
 
 class AttackerOracle:
     """Best-response attack policy for the attacker against mixed strategy of defender."""
-    def __init__(self, model, defense_profile, defense_strategy):
+    def __init__(self, model, defense_profile, defense_strategy, exper_index=0):
         """
         Construct a best-response object using QLearning.
         :param model: Model of the alert prioritization problem (i.e., Model object).
         :param defense_profile: List of defense policies.
         :param defense_strategy: List of probablities of choosing policy from the defense profile 
+        :param exper_index: Index of experiment for logging and reward tracking.
         """       
         self.mode = "attack"
         state_size = model.horizon*(len(model.alert_types) + len(model.attack_types) + len(model.alert_types) * len(model.attack_types))
@@ -487,7 +495,8 @@ class AttackerOracle:
                            lambda state: flatten_state(state),
                            state_update,
                            defense_profile,
-                           defense_strategy)        
+                           defense_strategy,
+                           exper_index=exper_index)        
         tf.reset_default_graph()            
 
 def get_payoff_mixed(model, attack_profile, defense_profile, attack_strategy, defense_strategy):
@@ -590,7 +599,7 @@ if __name__ == "__main__":
 
         # Then load the attack profile and strategy
         if attack == 'td3':
-            attacker = AttackerOracle(actual_model, defense_profile, defense_strategy) 
+            attacker = AttackerOracle(actual_model, defense_profile, defense_strategy, exper_index=exper_index) 
             utility = -1 * attacker.agent.utility
         elif attack == 'fixed':
             attack_strategy = [1.0]
