@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -p big_compute
 #SBATCH -N 1
-#SBATCH -c 4
+#SBATCH -c 128
 #SBATCH -t 06:00:00
 #SBATCH --job-name="eval_ddpg"
 #SBATCH -o eval_ddpg.%j.out
